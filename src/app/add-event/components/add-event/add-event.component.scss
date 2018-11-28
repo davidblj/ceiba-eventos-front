@@ -1,0 +1,11 @@
+$form-padding: 20px;
+
+.form {
+
+    height: 100vh;
+
+    &__title {
+        border-bottom: solid 1px;
+        padding: $form-padding $form-padding 0 $form-padding;
+    }
+}
