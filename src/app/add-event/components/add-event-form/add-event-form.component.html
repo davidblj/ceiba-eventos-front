@@ -1,25 +1,30 @@
 
 <!-- form inputs -->
 <div class="form">
-    
+        
     <div class="form__text-inputs">
+                
+        <mat-card>
 
-        <mat-form-field class="form__input"
-            appearance="outline">
-            <mat-label>Nombre</mat-label>
-            <input matInput>
-        </mat-form-field>
+            <mat-form-field class="form__input"
+                appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput>
+            </mat-form-field>
 
-        <mat-form-field class="form__input"
-            appearance="outline">
-            <mat-label>Descripción</mat-label>
-            <input matInput>
-        </mat-form-field>
+            <!-- set this field margin to 0 -->
+            <mat-form-field class="form__input"
+                appearance="outline">
+                <mat-label>Descripción</mat-label>
+                <input matInput>
+            </mat-form-field>
 
-    </div>
+        </mat-card>            
+    </div>    
 
     <div class="form__resources">
-
+        <app-add-event-resources>        
+        </app-add-event-resources>
     </div>
 
     <div class="form__inputs">

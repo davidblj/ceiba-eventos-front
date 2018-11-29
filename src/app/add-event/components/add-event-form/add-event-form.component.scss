@@ -1,12 +1,18 @@
-$form-padding: 40px;
+$form-padding: 30px;
 
-.form {
+.form {    
 
     &__text-inputs {
-        padding: $form-padding $form-padding 0
+        padding: $form-padding;
+        border-bottom: solid 1px;
     }
 
     &__input {
-        width: 100%;
+        width: 100%;            
+    }
+
+    &__resources {
+        padding: $form-padding;
+        border-bottom: solid 1px;
     }
 }
