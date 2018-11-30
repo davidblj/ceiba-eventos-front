@@ -4,9 +4,10 @@ $form-padding: 30px;
 
 .form {    
 
-    &__text-inputs-box {        
+    &__text-inputs-box {       
+        background-color: rgba(black, 0.05); 
         padding: $form-padding;
-        border-bottom: solid 1px;        
+        border-bottom: solid rgba(black, 0.2) 1px;        
     }
 
     &__input {
@@ -15,6 +16,6 @@ $form-padding: 30px;
 
     &__resources {
         padding: $form-padding;
-        border-bottom: solid 1px;
+        border-bottom: solid rgba(black, 0.2) 1px;
     }
 }
