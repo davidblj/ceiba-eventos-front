@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
 @import '~@angular/material/theming';
+@import "~src/scss/theme-colors.scss";
+
 
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-amber);
-$candy-app-accent:  mat-palette($mat-purple, A200, A100, A400);
-$candy-app-warn:    mat-palette($mat-red);
-
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
-
-@include angular-material-theme($candy-app-theme);
-
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+@include angular-material-theme($app-theme);

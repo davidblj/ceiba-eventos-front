@@ -1,10 +1,12 @@
+@import "~src/scss/theme-colors.scss";
+
 $form-padding: 30px;
 
 .form {    
 
-    &__text-inputs {
+    &__text-inputs-box {        
         padding: $form-padding;
-        border-bottom: solid 1px;
+        border-bottom: solid 1px;        
     }
 
     &__input {
