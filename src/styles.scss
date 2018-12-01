@@ -1,4 +1,5 @@
 @import "~src/scss/material-theme.scss";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 *,
 *::after,
@@ -16,4 +17,5 @@ html {
 
 body {
     box-sizing: border-box;
+    position: relative;
 }

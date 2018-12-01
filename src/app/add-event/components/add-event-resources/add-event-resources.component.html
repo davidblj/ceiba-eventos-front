@@ -1,3 +1,28 @@
-<p>
-  add-event-resources works!
-</p>
+
+<div class="resources">
+
+  <div class="resources__icon">
+    <app-add-event-section-icon
+      [source]="iconLink">
+    </app-add-event-section-icon>
+  </div>  
+  
+  <div class="resources__header">
+      <h3 class="resources__title mat-subheading-2">
+          Recursos
+      </h3>
+        
+      <h3 class="resources__amount mat-subheading-2">
+        0.
+      </h3>
+  </div>  
+
+  <!-- todo: loop of resource items -->
+
+  <div class="resources__item-list">
+    <app-add-event-new-item
+      [itemTitle]="itemTitle">  
+    </app-add-event-new-item>
+  </div>
+
+</div>

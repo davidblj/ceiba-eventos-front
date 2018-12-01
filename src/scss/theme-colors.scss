@@ -1,12 +1,21 @@
 @import '~@angular/material/theming';
 
-$app-primary: mat-palette($mat-pink, 500, 400, 900);
-$app-accent:  mat-palette($mat-light-blue);
+// material variables
+
+$app-primary: mat-palette($mat-indigo, 700);
+$app-accent:  mat-palette($mat-teal);
 $app-warn:    mat-palette($mat-red);
+
+// global variables
 
 $primary: mat-color($app-primary);
 $primary-dark-1: mat-color($app-primary, 700);
 $primary-dark-2: mat-color($app-primary, 800);
+$primary-light-1: mat-color($app-primary, 600);
+$primary-light-1: mat-color($app-primary, 500);
 
+$secondary: mat-color($app-accent);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
+
+$linear-icon-color: #272932;

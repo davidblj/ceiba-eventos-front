@@ -1,0 +1,19 @@
+@import "~src/scss/theme-colors.scss";
+
+.icon {
+
+    &__circular-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center;
+        background-color: #ebebec;     
+        width: 65px;
+        height: 65px;
+        border-radius: 100%;
+
+        img {
+            height: 42px;    
+        }
+    }
+}

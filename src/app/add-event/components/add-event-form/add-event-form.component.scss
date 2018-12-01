@@ -1,12 +1,10 @@
 @import "~src/scss/theme-colors.scss";
 
-$form-padding: 30px;
-
-.form {    
-
-    &__text-inputs-box {       
-        background-color: rgba(black, 0.05); 
-        padding: $form-padding;
+.form {
+    
+    &__text-inputs-section {       
+        background-color: rgba(black, 0.035); 
+        padding: 30px 30px 50px;
         border-bottom: solid rgba(black, 0.2) 1px;        
     }
 
@@ -14,8 +12,26 @@ $form-padding: 30px;
         width: 100%;            
     }
 
-    &__resources {
-        padding: $form-padding;
-        border-bottom: solid rgba(black, 0.2) 1px;
+    &__section {
+        padding: 25px 15px 50px;        
+
+        &--divider {
+            border-bottom: solid rgba(black, 0.2) 1px;
+        }
+
+        &--last-child {
+            // todo: set the margin dinamically
+            // margin-bottom: 10px; 
+        }
+    }
+
+    &__footer {
+        display: flex;
+        width: 100%;
+        justify-content: center;        
+        padding: 15px;        
+        background: darken(white, 5%);               
+        position: absolute;
+        bottom: 0px;
     }
 }

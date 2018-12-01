@@ -1,15 +1,20 @@
 @import "~src/scss/theme-colors.scss";
+@import "~src/scss/typhography.scss";
 
-$form-padding: 20px;
+$form-padding: 10px;
 
 .form {
 
     height: 100vh;
 
     &__title {
-        background-color: $primary;
-        color: white;
+        
+        font-size: $title-font-size;
+        font-family: $title-font-family;
+        text-align: center;
+
+        color: $primary;
         border-bottom: solid 1px;
-        padding: $form-padding $form-padding 0 $form-padding;
-    }
+        padding: $form-padding;
+    }    
 }

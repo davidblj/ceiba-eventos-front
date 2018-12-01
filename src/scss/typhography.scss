@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+$title-typography-config: mat-typography-config(
+  $font-family: 'Lobster, cursive', 
+  $title: mat-typography-level(25px, 25px, 400)  
+);
+
+$title-font-size: mat-font-size($title-typography-config, title);
+$title-font-family: mat-font-family($title-typography-config);
