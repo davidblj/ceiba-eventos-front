@@ -5,17 +5,13 @@
     </app-add-event-section-icon>
   </div>
 
-  <mat-form-field>
-    <mat-label>Nombre</mat-label>
-    <input matInput>
-    <mat-icon matSuffix color="accent">tag_faces</mat-icon>
-  </mat-form-field>
+  <app-default-text-input
+      [textInput]="formConfig.name">                    
+  </app-default-text-input>
 
-  <mat-form-field>
-    <mat-label>Descripción</mat-label>
-    <input matInput>
-    <mat-icon matSuffix color="accent">short_text</mat-icon>
-  </mat-form-field>
+  <app-default-text-input
+      [textInput]="formConfig.description">                    
+  </app-default-text-input>  
 
   <mat-form-field>
     <mat-label>Precio</mat-label>

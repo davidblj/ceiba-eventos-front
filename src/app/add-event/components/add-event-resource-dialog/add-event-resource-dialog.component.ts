@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { size } from '../add-event-section-icon/add-event-section-icon.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormConfig } from './form-config';
 
 @Component({
   selector: 'app-add-event-resource-dialog',
@@ -8,11 +10,32 @@ import { size } from '../add-event-section-icon/add-event-section-icon.component
 })
 export class AddEventResourceDialogComponent implements OnInit {
 
+  formConfig: FormConfig;
+  form: FormGroup;
+
   size: size = size.large;
   iconLink: String = "assets/icons/gift-box_indigo.svg";
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+
+    this.form = this.fb.group({
+      name: [ '', [
+        Validators.required, 
+        Validators.minLength(3),
+        Validators.maxLength(24)
+      ]],
+      description: [ '', [
+        Validators.minLength(10),
+        Validators.maxLength(150)
+      ]]
+    });
+
+    this.instantiateFormConfiguration();
+  }
+
+  instantiateFormConfiguration() {
+    this.formConfig = new FormConfig(this.form);
   }
 }

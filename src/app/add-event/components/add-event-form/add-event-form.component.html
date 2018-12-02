@@ -3,21 +3,15 @@
     <div class="form__body">
 
         <div class="form__text-inputs-section">
-
             <mat-card>
-                <mat-form-field class="form__input" appearance="outline">
-                    <mat-label>Nombre</mat-label>
-                    <input matInput>
-                    <mat-icon matSuffix color="accent">label_outline</mat-icon>
-                </mat-form-field>
+                <app-default-text-input
+                    [textInput]="formConfig.name">                    
+                </app-default-text-input>
 
-                <mat-form-field class="form__input" style="margin-bottom: -1.25em" appearance="outline">
-                    <mat-label>Descripción</mat-label>
-                    <input matInput>
-                    <mat-icon matSuffix color="accent">short_text</mat-icon>
-                </mat-form-field>
+                <app-default-text-input
+                    [textInput]="formConfig.description">                    
+                </app-default-text-input>
             </mat-card>
-
         </div>
 
         <div class="form__section form__section--divider">
@@ -29,7 +23,7 @@
             <app-add-event-inputs>
             </app-add-event-inputs>
         </div>
-
+        
     </div>
 
     <div class="form__footer">

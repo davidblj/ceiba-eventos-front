@@ -12,6 +12,8 @@ import { AddEventInputsComponent } from './components/add-event-inputs/add-event
 import { AddEventSectionIconComponent } from './components/add-event-section-icon/add-event-section-icon.component';
 import { AddEventResourceDialogComponent } from './components/add-event-resource-dialog/add-event-resource-dialog.component';
 import { AddEventAmountComponent } from './components/add-event-amount/add-event-amount.component';
+import { DefaultTextInputComponent } from './components/add-event-form-fields/default-text-input/default-text-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { AddEventAmountComponent } from './components/add-event-amount/add-event
     AddEventInputsComponent,
     AddEventSectionIconComponent,
     AddEventResourceDialogComponent,
-    AddEventAmountComponent
+    AddEventAmountComponent,
+    DefaultTextInputComponent
   ],
   imports: [
     CommonModule,
     AddEventRoutingModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     AddEventResourceDialogComponent
