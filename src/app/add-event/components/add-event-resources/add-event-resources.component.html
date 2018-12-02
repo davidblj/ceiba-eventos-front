@@ -15,13 +15,14 @@
       <h3 class="resources__amount mat-subheading-2">
         0.
       </h3>
-  </div>  
+  </div>
 
   <!-- todo: loop of resource items -->
 
   <div class="resources__item-list">
     <app-add-event-new-item
-      [itemTitle]="itemTitle">  
+      [itemTitle]="itemTitle"
+      (onClick)="onClickHandler()">  
     </app-add-event-new-item>
   </div>
 

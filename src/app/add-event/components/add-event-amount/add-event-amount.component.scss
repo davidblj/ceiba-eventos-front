@@ -1,0 +1,44 @@
+@import "~src/scss/theme-colors.scss";
+
+.amount-input {
+
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+
+    &__button {
+
+        padding: 12px 15px;
+        background-color: $secondary-light-1;
+        border: 1px solid $secondary-light-1;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+
+        &--position-left {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &--position-right {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__input {
+        
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        border: 1px solid #D7DBDD;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

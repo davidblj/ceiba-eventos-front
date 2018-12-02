@@ -1,6 +1,14 @@
 
 <div class="icon">
-  <div class="icon__circular-box">
+  
+  <div *ngIf = "isOfType(1)"
+        class = "icon icon--shape-circular icon--size-small">
     <img src="{{source}}">
   </div>
+
+  <div *ngIf = "isOfType(2)"
+        class = "icon icon--size-large">
+    <img src="{{source}}">
+  </div>
+
 </div>

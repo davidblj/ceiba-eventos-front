@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-event-new-item',
@@ -10,9 +10,15 @@ export class AddEventNewItemComponent implements OnInit {
   @Input()
   itemTitle: String;
 
+  @Output()
+  onClick = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  emitOnClick() {
+    this.onClick.emit();
+  }
 }

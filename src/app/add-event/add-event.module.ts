@@ -10,6 +10,8 @@ import { AddEventResourceItemComponent } from './components/add-event-resource-i
 import { AddEventNewItemComponent } from './components/add-event-new-item/add-event-new-item.component';
 import { AddEventInputsComponent } from './components/add-event-inputs/add-event-inputs.component';
 import { AddEventSectionIconComponent } from './components/add-event-section-icon/add-event-section-icon.component';
+import { AddEventResourceDialogComponent } from './components/add-event-resource-dialog/add-event-resource-dialog.component';
+import { AddEventAmountComponent } from './components/add-event-amount/add-event-amount.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,17 @@ import { AddEventSectionIconComponent } from './components/add-event-section-ico
     AddEventResourceItemComponent,
     AddEventNewItemComponent,
     AddEventInputsComponent,
-    AddEventSectionIconComponent
+    AddEventSectionIconComponent,
+    AddEventResourceDialogComponent,
+    AddEventAmountComponent
   ],
   imports: [
     CommonModule,
     AddEventRoutingModule,
     MaterialModule,
+  ],
+  entryComponents: [
+    AddEventResourceDialogComponent
   ]
 })
 export class AddEventModule { }

@@ -1,0 +1,35 @@
+<div mat-dialog-content class="event-dialog-content">
+
+  <div class="event-dialog-content__intent">
+    <app-add-event-section-icon [source]="iconLink" [size]="size">
+    </app-add-event-section-icon>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput>
+    <mat-icon matSuffix color="accent">tag_faces</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+    <input matInput>
+    <mat-icon matSuffix color="accent">short_text</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Precio</mat-label>
+    <input matInput>
+    <mat-icon matSuffix color="accent">attach_money</mat-icon>
+  </mat-form-field>
+
+  <app-add-event-amount>  
+  </app-add-event-amount>
+
+</div>
+
+<div mat-dialog-actions align="center" class="event-dialog-actions">
+  <button mat-fab>
+    <mat-icon>save</mat-icon>
+  </button>
+</div>
