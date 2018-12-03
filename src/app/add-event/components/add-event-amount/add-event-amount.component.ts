@@ -16,6 +16,14 @@ export class AddEventAmountComponent implements OnInit {
   ngOnInit() {
   }
 
+  filterNumbers(event): boolean {
+    
+    const keyPressed = event.key;
+    const numericRegex = /^\d+$/;
+    const codeIsNumeric = !numericRegex.test(keyPressed);
+    return codeIsNumeric ? false : true;
+  }
+
   goUp() {
 
     const current = this.getNumber(this.control.value);

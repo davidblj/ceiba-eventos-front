@@ -3,7 +3,8 @@
   <button matRipple class="amount-input__button amount-input__button--position-left" 
           (click)="goDown()">-</button>
   <input class="amount-input__input" placeholder="Cantidad"
-         [formControl]="control">
+         [formControl]="control"
+         (keypress)="filterNumbers($event)">
   <button matRipple class="amount-input__button amount-input__button--position-right"
           (click)="goUp()">+</button>
 </div>

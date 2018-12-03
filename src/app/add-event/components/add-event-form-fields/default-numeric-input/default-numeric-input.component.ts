@@ -14,7 +14,7 @@ export class DefaultNumericInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {   
-  }
+  }  
 
   get value() {    
     return this.textInput.control.value;
