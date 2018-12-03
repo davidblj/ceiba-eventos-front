@@ -1,4 +1,5 @@
 import { TextInput } from "../../shared/text-input.interface";
+import { NumericInput } from "../../shared/numeric-input.interface";
 import { FormGroup } from "@angular/forms";
 
 export class FormConfig {
@@ -6,11 +7,14 @@ export class FormConfig {
     readonly form: FormGroup;
     _name: TextInput;
     _description: TextInput;
+    _price: NumericInput;
 
     constructor(form: FormGroup) {
+
         this.form = form;
         this.buildNameInput();
         this.buildDescriptionInput();
+        this.buildPriceInput();
     }
 
     buildNameInput() {
@@ -21,7 +25,7 @@ export class FormConfig {
             icon: 'tag_faces',
             label: 'Nombre',
             minLength: 3,
-            maxLength: 24
+            maxLength: 24            
         }
     }
 
@@ -37,11 +41,25 @@ export class FormConfig {
         }
     }
 
+    buildPriceInput() {
+
+        this._price = {
+            appearence: 'standard',
+            control: this.form.controls['price'],
+            icon: 'attach_money',
+            label: 'Precio'
+        }
+    }
+
     get name() {
         return this._name;
     }
 
     get description() {
         return this._description;
+    }
+
+    get price() {
+        return this._price;
     }
 }

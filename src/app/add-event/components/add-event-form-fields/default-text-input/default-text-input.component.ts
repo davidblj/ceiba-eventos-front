@@ -11,12 +11,9 @@ export class DefaultTextInputComponent implements OnInit {
   @Input()
   textInput: TextInput;
 
-  leftHint: String;
-
   constructor() { }
 
-  ngOnInit() {
-    this.leftHint = `Máximo ${this.textInput.maxLength} car.`;    
+  ngOnInit() {   
   }
 
   get value() {    

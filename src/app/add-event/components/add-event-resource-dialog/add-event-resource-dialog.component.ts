@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { size } from '../add-event-section-icon/add-event-section-icon.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormConfig } from './form-config';
+import { NumericValidator } from '../../shared/numeric.validator';
 
 @Component({
   selector: 'app-add-event-resource-dialog',
@@ -29,6 +30,10 @@ export class AddEventResourceDialogComponent implements OnInit {
       description: [ '', [
         Validators.minLength(10),
         Validators.maxLength(150)
+      ]],
+      price: [ '', [
+        Validators.required, 
+        NumericValidator()
       ]]
     });
 

@@ -13,11 +13,9 @@
       [textInput]="formConfig.description">                    
   </app-default-text-input>  
 
-  <mat-form-field>
-    <mat-label>Precio</mat-label>
-    <input matInput>
-    <mat-icon matSuffix color="accent">attach_money</mat-icon>
-  </mat-form-field>
+  <app-default-numeric-input
+      [textInput]="formConfig.price">
+  </app-default-numeric-input>  
 
   <app-add-event-amount>  
   </app-add-event-amount>
