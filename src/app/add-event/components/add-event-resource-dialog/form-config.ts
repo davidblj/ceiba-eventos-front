@@ -25,7 +25,8 @@ export class FormConfig {
             icon: 'tag_faces',
             label: 'Nombre',
             minLength: 3,
-            maxLength: 24            
+            maxLength: 24,
+            optional: false            
         }
     }
 
@@ -37,7 +38,8 @@ export class FormConfig {
             icon: 'short_text',
             label: 'Descripción',
             minLength: 10,
-            maxLength: 150
+            maxLength: 150,
+            optional: true
         }
     }
 
@@ -47,7 +49,8 @@ export class FormConfig {
             appearence: 'standard',
             control: this.form.controls['price'],
             icon: 'attach_money',
-            label: 'Precio'
+            label: 'Precio',
+            optional: false
         }
     }
 
@@ -61,5 +64,9 @@ export class FormConfig {
 
     get price() {
         return this._price;
+    }
+
+    get amount() {
+        return this.form.controls['amount'];
     }
 }

@@ -6,6 +6,7 @@ export interface TextInput {
     control: AbstractControl,
     placeholder?: String,
     icon: String,
-    minLength: number;
-    maxLength: number;
+    minLength: number,
+    maxLength: number,
+    optional: boolean
 }

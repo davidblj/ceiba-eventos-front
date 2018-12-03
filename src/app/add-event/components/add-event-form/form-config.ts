@@ -21,7 +21,8 @@ export class FormConfig {
             icon: 'label_outline',
             label: 'Nombre',
             minLength: 3,
-            maxLength: 24
+            maxLength: 24,
+            optional: false
         }
     }
 
@@ -33,7 +34,8 @@ export class FormConfig {
             icon: 'short_text',
             label: 'Descripción',
             minLength: 10,
-            maxLength: 150
+            maxLength: 150,
+            optional: true
         }
     }
 

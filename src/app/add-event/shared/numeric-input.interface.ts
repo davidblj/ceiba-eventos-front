@@ -5,5 +5,6 @@ export interface NumericInput {
     label: String,
     control: AbstractControl,
     placeholder?: String,
-    icon: String,    
+    icon: String,
+    optional: boolean    
 }

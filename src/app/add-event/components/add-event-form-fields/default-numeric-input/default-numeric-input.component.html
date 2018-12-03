@@ -1,9 +1,10 @@
 
 <mat-form-field class="form__input" 
-                appearance="{{textInput.appearence}}">                
-  <mat-label>{{textInput.label}}</mat-label>
-  <input matInput [formControl]="control">
-  <mat-icon matSuffix color="accent">{{textInput.icon}}</mat-icon>
-  <mat-hint align="end">{{ formattedValue | number: '.0'}}</mat-hint>
-  <mat-error *ngIf="isInvalid">{{errorMessage}}</mat-error>
+                appearance="{{textInput.appearence}}"
+                hideRequiredMarker="{{textInput.optional}}">                
+    <mat-label>{{textInput.label}}</mat-label>
+    <input matInput [formControl]="control" [required]="!textInput.optional">
+    <mat-icon matSuffix color="accent">{{textInput.icon}}</mat-icon>
+    <mat-hint align="end"><strong>{{ formattedValue | number: '.0'}}</strong></mat-hint>
+    <mat-error *ngIf="isInvalid">{{errorMessage}}</mat-error>
 </mat-form-field>

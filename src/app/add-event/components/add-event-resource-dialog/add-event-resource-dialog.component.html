@@ -17,13 +17,15 @@
       [textInput]="formConfig.price">
   </app-default-numeric-input>  
 
-  <app-add-event-amount>  
+  <app-add-event-amount
+      [control]="formConfig.amount">  
   </app-add-event-amount>
 
 </div>
 
 <div mat-dialog-actions align="center" class="event-dialog-actions">
-  <button mat-fab>
+  <button mat-fab 
+          [disabled]="form.invalid">
     <mat-icon>save</mat-icon>
   </button>
 </div>

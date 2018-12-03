@@ -34,7 +34,8 @@ export class AddEventResourceDialogComponent implements OnInit {
       price: [ '', [
         Validators.required, 
         NumericValidator()
-      ]]
+      ]],
+      amount: [ '' ]
     });
 
     this.instantiateFormConfiguration();

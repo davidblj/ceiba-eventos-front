@@ -27,7 +27,8 @@
     </div>
 
     <div class="form__footer">
-        <button mat-fab>
+        <button mat-fab
+                [disabled]="form.invalid">
             <mat-icon>send</mat-icon>
         </button>
     </div>

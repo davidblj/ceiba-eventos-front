@@ -10,6 +10,7 @@ export class DefaultTextInputComponent implements OnInit {
 
   @Input()
   textInput: TextInput;
+  flag =  false;
 
   constructor() { }
 
