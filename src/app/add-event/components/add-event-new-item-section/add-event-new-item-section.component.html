@@ -1,0 +1,29 @@
+
+<div class="item-section">
+
+  <div class="item-section__icon">
+    <app-add-event-section-icon
+      [source]="sectionInformation.iconLink">
+    </app-add-event-section-icon>
+  </div>  
+  
+  <div class="item-section__header">
+      <h3 class="item-section__title mat-subheading-2">
+          {{sectionInformation.sectionTitle}}
+      </h3>
+        
+      <h3 class="item-section__amount mat-subheading-2">
+        0.
+      </h3>
+  </div>
+
+  <!-- todo: loop of resource items -->
+
+  <div class="item-section__item-list">
+    <app-add-event-new-item
+      [itemTitle]="sectionInformation.itemName"
+      (onClick)="onClickHandler()">  
+    </app-add-event-new-item>
+  </div>
+
+</div>

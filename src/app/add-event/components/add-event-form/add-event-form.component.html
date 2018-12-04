@@ -15,13 +15,16 @@
         </div>
 
         <div class="form__section form__section--divider">
-            <app-add-event-resources>
-            </app-add-event-resources>
+            <app-add-event-new-item-section
+                [sectionInformation]="resourceSectionInfo"
+                (onNewItem)="newResourceHandler()">                
+            </app-add-event-new-item-section>
         </div>
 
         <div class="form__section form__section--last-child">
-            <app-add-event-inputs>
-            </app-add-event-inputs>
+            <app-add-event-new-item-section
+                [sectionInformation]="inputSectionInfo">                
+            </app-add-event-new-item-section>
         </div>
         
     </div>
