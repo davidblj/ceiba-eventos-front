@@ -25,7 +25,8 @@
 
 <div mat-dialog-actions align="center" class="event-dialog-actions">
   <button mat-fab 
-          [disabled]="form.invalid">
+          [disabled]="form.invalid"
+          (click)="onClickHandler()">
     <mat-icon>save</mat-icon>
   </button>
 </div>

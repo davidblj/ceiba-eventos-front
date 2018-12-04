@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+@import "~src/scss/theme-colors.scss";
+
+.item {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 2px 7px 12px;
+    margin: 0 14px 18px 14px;
+    background-color: rgba(black, 0.035);
+    border: solid 1px rgba(black, 0.05);
+    border-radius: 7px;
+
+    &__content, &__controls {
+        display: flex;
+        align-items: center;
+    }
+
+    &__name {
+        color: $dark-secondary-text;
+    }
+
+    &__favorite {
+        margin-right: 8px;
+    }
+
+    &__icon {
+
+        &--color-indigo {
+            color: $primary-light-2;
+        }
+    }
+}

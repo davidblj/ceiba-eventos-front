@@ -3,6 +3,7 @@ import { size } from '../add-event-section-icon/add-event-section-icon.component
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormConfig } from './form-config';
 import { NumericValidator } from '../../shared/numeric.validator';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-event-resource-dialog',
@@ -17,7 +18,8 @@ export class AddEventResourceDialogComponent implements OnInit {
   size: size = size.large;
   iconLink: String = "assets/icons/gift-box_indigo.svg";
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, 
+              public dialogRef: MatDialogRef<AddEventResourceDialogComponent>) { }
 
   ngOnInit() {
 
@@ -43,5 +45,9 @@ export class AddEventResourceDialogComponent implements OnInit {
 
   instantiateFormConfiguration() {
     this.formConfig = new FormConfig(this.form);
+  }
+
+  onClickHandler() {    
+    this.dialogRef.close(this.form);
   }
 }

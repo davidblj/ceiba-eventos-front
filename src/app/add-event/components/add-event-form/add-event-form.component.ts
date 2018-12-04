@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { FormConfig } from './form-config'
 import { SectionInformation } from '../../shared/section-information.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/add-event-resource-dialog.component';
+import { Item } from '../../shared/item.interface';
 
 @Component({
   selector: 'app-add-event-form',
@@ -31,7 +32,8 @@ export class AddEventFormComponent implements OnInit {
       description: [ '', [
         Validators.minLength(10),
         Validators.maxLength(150)
-      ]]
+      ]],
+      resources: this.fb.array([])
     });
 
     this.instantiateFormConfiguration();
@@ -60,9 +62,27 @@ export class AddEventFormComponent implements OnInit {
   }
 
   newResourceHandler() {
-    this.dialog.open(AddEventResourceDialogComponent, {
+    
+    let resourceDialog = this.dialog.open(AddEventResourceDialogComponent, {
       width: '80vw',      
       panelClass: 'dialog'
     })
+
+    resourceDialog.afterClosed().subscribe(this.onResourceDialogClosed());
+  }
+
+  onResourceDialogClosed() {
+    
+    return (resource: FormGroup) => {
+
+      if (resource) {        
+        const formArray = this.form.get('resources') as FormArray;
+        formArray.push(resource);        
+      }    
+    }    
+  }
+
+  get resources() {
+    return this.form.value.resources as Item[];
   }
 }

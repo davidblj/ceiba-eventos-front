@@ -18,6 +18,12 @@
   </div>
 
   <!-- todo: loop of resource items -->
+  <div *ngFor="let item of items">
+    {{item.name}}
+  </div>
+
+  <app-add-event-item>  
+  </app-add-event-item>
 
   <div class="item-section__item-list">
     <app-add-event-new-item
