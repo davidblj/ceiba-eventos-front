@@ -15,6 +15,9 @@ export class AddEventNewItemSectionComponent implements OnInit {
   @Input()
   items: Item[];
 
+  @Input()
+  favoriteControl: boolean = true;
+
   @Output()
   onNewItem: EventEmitter<String> = new EventEmitter<String>();
 
@@ -36,7 +39,7 @@ export class AddEventNewItemSectionComponent implements OnInit {
   }
 
   onNewFavoriteItemHandler(favorite: string) {
-    this.favorite = favorite;
+    if (this.favoriteControl) this.favorite = favorite;
   }
 
   onEditHandler(index: number) {
@@ -45,5 +48,9 @@ export class AddEventNewItemSectionComponent implements OnInit {
 
   onDeleteHandler(index: number) {
     this.onDeleteItem.emit(index);
+  }
+
+  get itemListLength() {
+    return this.items ? this.items.length : 0;
   }
 }
