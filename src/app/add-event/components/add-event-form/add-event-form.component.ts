@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/add-event-resource-dialog.component';
 import { Item } from '../../shared/item.interface';
 import { AddEventInputDialogComponent } from '../add-event-input-dialog/add-event-input-dialog.component';
+import { DialogCreator } from '../../shared/dialogs/dialog-creator';
 
 @Component({
   selector: 'app-add-event-form',
@@ -18,6 +19,7 @@ export class AddEventFormComponent implements OnInit {
   form: FormGroup;
   inputSectionInfo: SectionInformation;
   resourceSectionInfo: SectionInformation;
+  resourceDialogCreator: DialogCreator;
 
   constructor(private fb: FormBuilder, 
               public dialog: MatDialog) { }
@@ -41,6 +43,7 @@ export class AddEventFormComponent implements OnInit {
     this.instantiateFormConfiguration();
     this.buildResourceSectionInfo();
     this.buildInputSectionInfo();
+    this.buildResourceDialogCreator();
   }
 
   instantiateFormConfiguration() {
@@ -66,38 +69,26 @@ export class AddEventFormComponent implements OnInit {
     }
   }
 
-  // todo: refactor
-  onNewResourceHandler() {    
-
-    let resourceDialog = this.openResourceDialog(null);
-    resourceDialog.afterClosed().subscribe(this.onNewResourceDialogClosed());
+  buildResourceDialogCreator() {
+    this.resourceDialogCreator = new DialogCreator(this.dialog, AddEventResourceDialogComponent, 
+      'resources', this.form);    
   }
 
-  onNewResourceDialogClosed() {
-    
-    return (resource: FormGroup) => {
-      if (resource) this.resourcesFormArray.push(resource);          
-    }    
+  // todo: refactor
+  onNewResourceHandler() {    
+    this.resourceDialogCreator.handleNewInput();
   }
 
   onEditResourceHandler(index: number) {
-
-    let resource = this.resourcesFormArray.at(index);
-    let resourceDialog = this.openResourceDialog({resource});
-    resourceDialog.afterClosed().subscribe(this.onEditResourceDialogClosed(index));
-  }
-
-  onEditResourceDialogClosed(index: number) {
-
-    return (resource: FormGroup) => {
-      if (resource) this.resourcesFormArray.setControl(index, resource);        
-    }
+    this.resourceDialogCreator.handleInputUpdate(index);    
   }
 
   onDeleteResourceHandler(index: number) {
     this.resourcesFormArray.removeAt(index);
   }
 
+  //--- 
+  
   onNewInputHandler() {    
 
     let resourceDialog = this.openInputDialog(null);

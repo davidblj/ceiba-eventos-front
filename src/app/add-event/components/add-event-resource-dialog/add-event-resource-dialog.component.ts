@@ -48,7 +48,7 @@ export class AddEventResourceDialogComponent implements OnInit {
   patchForm() {
     
     if (this.data) {
-      const resource = this.data.resource.value;      
+      const resource = this.data.item.value;      
       this.form.patchValue(resource);
     }
   }
