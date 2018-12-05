@@ -43,6 +43,10 @@ export class DialogCreator {
         }
     }
 
+    handleInputDelete(index: number) {
+        this.formArray.removeAt(index);
+    }
+
     openDialog(data) {
         
         return this.dialogService.open(this.dialogComponent, {

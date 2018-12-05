@@ -20,6 +20,7 @@ export class AddEventFormComponent implements OnInit {
   inputSectionInfo: SectionInformation;
   resourceSectionInfo: SectionInformation;
   resourceDialogCreator: DialogCreator;
+  inputDialogCreator: DialogCreator;
 
   constructor(private fb: FormBuilder, 
               public dialog: MatDialog) { }
@@ -43,7 +44,7 @@ export class AddEventFormComponent implements OnInit {
     this.instantiateFormConfiguration();
     this.buildResourceSectionInfo();
     this.buildInputSectionInfo();
-    this.buildResourceDialogCreator();
+    this.buildDialogCreators();
   }
 
   instantiateFormConfiguration() {
@@ -69,12 +70,13 @@ export class AddEventFormComponent implements OnInit {
     }
   }
 
-  buildResourceDialogCreator() {
+  buildDialogCreators() {
     this.resourceDialogCreator = new DialogCreator(this.dialog, AddEventResourceDialogComponent, 
-      'resources', this.form);    
+      'resources', this.form);
+    this.inputDialogCreator = new DialogCreator(this.dialog, AddEventInputDialogComponent, 
+      'inputs', this.form);
   }
 
-  // todo: refactor
   onNewResourceHandler() {    
     this.resourceDialogCreator.handleNewInput();
   }
@@ -84,69 +86,22 @@ export class AddEventFormComponent implements OnInit {
   }
 
   onDeleteResourceHandler(index: number) {
-    this.resourcesFormArray.removeAt(index);
+    this.resourceDialogCreator.handleInputDelete(index);
   }
-
-  //--- 
   
   onNewInputHandler() {    
-
-    let resourceDialog = this.openInputDialog(null);
-    resourceDialog.afterClosed().subscribe(this.onNewInputDialogClosed());
-  }
-
-  onNewInputDialogClosed() {
-    
-    return (input: FormGroup) => {
-      if (input) this.inputsFormArray.push(input);          
-    }
+    this.inputDialogCreator.handleNewInput();    
   }
 
   onEditInputHandler(index: number) {
-
-    let input = this.inputsFormArray.at(index);
-    let resourceDialog = this.openInputDialog({input});
-    resourceDialog.afterClosed().subscribe(this.onEditInputDialogClosed(index));
-  }
-
-  onEditInputDialogClosed(index: number) {
-
-    return (input: FormGroup) => {
-      if (input) this.inputsFormArray.setControl(index, input);        
-    }
+    this.inputDialogCreator.handleInputUpdate(index);    
   }
 
   onDeleteInputHandler(index: number) {
-    this.inputsFormArray.removeAt(index);
+    this.inputDialogCreator.handleInputDelete(index);
   }
 
-  // utils
-
-  openResourceDialog(data) {
-
-    return this.dialog.open(AddEventResourceDialogComponent, {
-      width: '80vw',      
-      panelClass: 'dialog',
-      data    
-    });
-  }
-
-  openInputDialog(data) {
-
-    return this.dialog.open(AddEventInputDialogComponent, {
-      width: '80vw',      
-      panelClass: 'dialog',
-      data    
-    });
-  }
-
-  get resourcesFormArray() {
-    return this.form.get('resources') as FormArray;
-  }
-
-  get inputsFormArray() {
-    return this.form.get('inputs') as FormArray;
-  }
+  // utils  
 
   get resources() {
     return this.form.value.resources as Item[];

@@ -48,7 +48,7 @@ export class AddEventInputDialogComponent implements OnInit {
   patchForm() {
     
     if (this.data) {
-      const input = this.data.input.value;      
+      const input = this.data.item.value;      
       this.form.patchValue(input);
     }
   }

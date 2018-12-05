@@ -28,6 +28,7 @@
             <app-add-event-new-item-section
                 [sectionInformation]="inputSectionInfo"
                 [items]="inputs"
+                [favoriteControl]="false"
                 (onNewItem)="onNewInputHandler()"
                 (onEditItem)="onEditInputHandler($event)"
                 (onDeleteItem)="onDeleteInputHandler($event)">                
