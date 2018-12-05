@@ -1,8 +1,6 @@
 @import "~src/scss/theme-colors.scss";
 @import "~src/scss/typhography.scss";
 
-$form-padding: 10px;
-
 .form {
 
     height: 100vh;
@@ -15,6 +13,6 @@ $form-padding: 10px;
 
         color: $primary;
         border-bottom: solid 1px;
-        padding: $form-padding;
+        padding: 23px;
     }    
 }
