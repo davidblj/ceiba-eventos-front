@@ -7,6 +7,7 @@ import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/ad
 import { Item } from '../../shared/item.interface';
 import { AddEventInputDialogComponent } from '../add-event-input-dialog/add-event-input-dialog.component';
 import { DialogCreator } from '../../shared/dialogs/dialog-creator';
+import { FormArrayLengthValidator } from '../../shared/validators/form-array-length.validator';
 
 @Component({
   selector: 'app-add-event-form',
@@ -37,7 +38,7 @@ export class AddEventFormComponent implements OnInit {
         Validators.minLength(10),
         Validators.maxLength(150)
       ]],
-      resources: this.fb.array([]),
+      resources: this.fb.array([], FormArrayLengthValidator()),
       inputs: this.fb.array([])
     });
 
