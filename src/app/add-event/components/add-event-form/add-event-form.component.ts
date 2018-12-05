@@ -45,15 +45,18 @@ export class AddEventFormComponent implements OnInit {
     this.formConfig = new FormConfig(this.form);
   }  
 
+  // todo: refactor
   buildResourceSectionInfo() {
+
     this.resourceSectionInfo = {
       iconLink: 'assets/icons/gift-box.svg',
       itemName: 'recurso',
-      sectionTitle: 'Recursos'
+      sectionTitle: 'Recursos *'
     }
   }
 
   buildInputSectionInfo() {
+
     this.inputSectionInfo = {
       iconLink: 'assets/icons/currency.svg',
       itemName: 'material',
@@ -61,25 +64,50 @@ export class AddEventFormComponent implements OnInit {
     }
   }
 
-  newResourceHandler() {
-    
-    let resourceDialog = this.dialog.open(AddEventResourceDialogComponent, {
-      width: '80vw',      
-      panelClass: 'dialog'
-    })
+  onNewResourceHandler() {    
 
-    resourceDialog.afterClosed().subscribe(this.onResourceDialogClosed());
+    let resourceDialog = this.openResourceDialog(null);
+    resourceDialog.afterClosed().subscribe(this.onNewResourceDialogClosed());
   }
 
-  onResourceDialogClosed() {
+  onNewResourceDialogClosed() {
     
     return (resource: FormGroup) => {
-
-      if (resource) {        
-        const formArray = this.form.get('resources') as FormArray;
-        formArray.push(resource);        
-      }    
+      if (resource) this.resourcesFormArray.push(resource);          
     }    
+  }
+
+  onEditResourceHandler(index: number) {
+
+    let resource = this.resourcesFormArray.at(index);
+    let resourceDialog = this.openResourceDialog({resource});
+    resourceDialog.afterClosed().subscribe(this.onEditResourceDialogClosed(index));
+  }
+
+  onEditResourceDialogClosed(index: number) {
+
+    return (resource: FormGroup) => {
+      if (resource) this.resourcesFormArray.setControl(index, resource);        
+    }
+  }
+
+  onDeleteResourceHandler(index: number) {
+    this.resourcesFormArray.removeAt(index);
+  }
+
+  // utils
+
+  openResourceDialog(data) {
+
+    return this.dialog.open(AddEventResourceDialogComponent, {
+      width: '80vw',      
+      panelClass: 'dialog',
+      data    
+    });
+  }
+
+  get resourcesFormArray() {
+    return this.form.get('resources') as FormArray;
   }
 
   get resources() {

@@ -1,20 +1,20 @@
 
-<div class="item">
+<div class="item" (click)="emitOnClick()">
   
   <div class="item__content">
-      <div class="item__name mat-body-strong">Cervezas</div>
+      <div class="item__name mat-body-strong">{{item.name}}</div>
   </div>
 
   <div class="item__controls">      
     
-    <mat-icon color="warn" class="item__favorite">favorite_border</mat-icon>
+    <mat-icon *ngIf="isFavored()" class="item__favorite">favorite_border</mat-icon>
 
-    <button mat-icon-button>
-      <mat-icon color="primary" class="item__icon item__icon--color-indigo">brush</mat-icon>
+    <button mat-icon-button (click)="emitOnEdit(); $event.stopPropagation()">
+      <mat-icon class="item__icon item__icon--color-indigo">brush</mat-icon>
     </button>
 
-    <button mat-icon-button>
-      <mat-icon color="primary" class="item__icon item__icon--color-indigo">delete_outline</mat-icon>
+    <button mat-icon-button (click)="emitOnDelete(); $event.stopPropagation()">
+      <mat-icon color="warn" class="item__icon">delete_outline</mat-icon>
     </button>
 
   </div>

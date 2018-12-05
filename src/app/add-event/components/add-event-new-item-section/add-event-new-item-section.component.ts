@@ -18,13 +18,32 @@ export class AddEventNewItemSectionComponent implements OnInit {
   @Output()
   onNewItem: EventEmitter<String> = new EventEmitter<String>();
 
+  @Output()
+  onEditItem: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  onDeleteItem: EventEmitter<number> = new EventEmitter<number>();
+
+  favorite = "";
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  // todo: refactor.
-  onClickHandler() {
+  onNewItemHandler() {
     this.onNewItem.emit(this.sectionInformation.sectionTitle);
+  }
+
+  onNewFavoriteItemHandler(favorite: string) {
+    this.favorite = favorite;
+  }
+
+  onEditHandler(index: number) {
+    this.onEditItem.emit(index);
+  }
+
+  onDeleteHandler(index: number) {
+    this.onDeleteItem.emit(index);
   }
 }

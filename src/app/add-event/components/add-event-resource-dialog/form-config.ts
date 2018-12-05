@@ -49,7 +49,7 @@ export class FormConfig {
             appearence: 'standard',
             control: this.form.controls['price'],
             icon: 'attach_money',
-            label: 'Precio',
+            label: 'Precio total',
             optional: false
         }
     }

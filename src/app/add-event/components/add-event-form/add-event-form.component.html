@@ -18,7 +18,9 @@
             <app-add-event-new-item-section
                 [sectionInformation]="resourceSectionInfo"
                 [items]="resources"
-                (onNewItem)="newResourceHandler()">                
+                (onNewItem)="onNewResourceHandler()"
+                (onEditItem)="onEditResourceHandler($event)"
+                (onDeleteItem)="onDeleteResourceHandler($event)">                
             </app-add-event-new-item-section>
         </div>
 

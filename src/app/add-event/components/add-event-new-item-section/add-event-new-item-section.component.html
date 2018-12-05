@@ -17,18 +17,20 @@
       </h3>
   </div>
 
-  <!-- todo: loop of resource items -->
-  <div *ngFor="let item of items">
-    {{item.name}}
-  </div>
-
-  <app-add-event-item>  
-  </app-add-event-item>
+  <div *ngFor="let item of items, index as i">
+    <app-add-event-item
+      [item]="item"
+      [favorite]="favorite"
+      (onClick)="onNewFavoriteItemHandler($event)"
+      (onEdit)="onEditHandler(i)"
+      (onDelete)="onDeleteHandler(i)">  
+    </app-add-event-item>
+  </div>  
 
   <div class="item-section__item-list">
     <app-add-event-new-item
       [itemTitle]="sectionInformation.itemName"
-      (onClick)="onClickHandler()">  
+      (onClick)="onNewItemHandler()">  
     </app-add-event-new-item>
   </div>
 
