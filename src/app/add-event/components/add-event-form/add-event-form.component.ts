@@ -5,6 +5,7 @@ import { SectionInformation } from '../../shared/section-information.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/add-event-resource-dialog.component';
 import { Item } from '../../shared/item.interface';
+import { AddEventInputDialogComponent } from '../add-event-input-dialog/add-event-input-dialog.component';
 
 @Component({
   selector: 'app-add-event-form',
@@ -33,7 +34,8 @@ export class AddEventFormComponent implements OnInit {
         Validators.minLength(10),
         Validators.maxLength(150)
       ]],
-      resources: this.fb.array([])
+      resources: this.fb.array([]),
+      inputs: this.fb.array([])
     });
 
     this.instantiateFormConfiguration();
@@ -64,6 +66,7 @@ export class AddEventFormComponent implements OnInit {
     }
   }
 
+  // todo: refactor
   onNewResourceHandler() {    
 
     let resourceDialog = this.openResourceDialog(null);
@@ -95,6 +98,37 @@ export class AddEventFormComponent implements OnInit {
     this.resourcesFormArray.removeAt(index);
   }
 
+  onNewInputHandler() {    
+
+    let resourceDialog = this.openInputDialog(null);
+    resourceDialog.afterClosed().subscribe(this.onNewInputDialogClosed());
+  }
+
+  onNewInputDialogClosed() {
+    
+    return (input: FormGroup) => {
+      if (input) this.inputsFormArray.push(input);          
+    }
+  }
+
+  onEditInputHandler(index: number) {
+
+    let input = this.inputsFormArray.at(index);
+    let resourceDialog = this.openInputDialog({input});
+    resourceDialog.afterClosed().subscribe(this.onEditInputDialogClosed(index));
+  }
+
+  onEditInputDialogClosed(index: number) {
+
+    return (input: FormGroup) => {
+      if (input) this.inputsFormArray.setControl(index, input);        
+    }
+  }
+
+  onDeleteInputHandler(index: number) {
+    this.inputsFormArray.removeAt(index);
+  }
+
   // utils
 
   openResourceDialog(data) {
@@ -106,11 +140,28 @@ export class AddEventFormComponent implements OnInit {
     });
   }
 
+  openInputDialog(data) {
+
+    return this.dialog.open(AddEventInputDialogComponent, {
+      width: '80vw',      
+      panelClass: 'dialog',
+      data    
+    });
+  }
+
   get resourcesFormArray() {
     return this.form.get('resources') as FormArray;
   }
 
+  get inputsFormArray() {
+    return this.form.get('inputs') as FormArray;
+  }
+
   get resources() {
     return this.form.value.resources as Item[];
+  }
+
+  get inputs() {
+    return this.form.value.inputs as Item[];
   }
 }

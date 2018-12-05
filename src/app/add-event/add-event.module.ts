@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DefaultNumericInputComponent } from './components/add-event-form-fields/default-numeric-input/default-numeric-input.component';
 import { AddEventNewItemSectionComponent } from './components/add-event-new-item-section/add-event-new-item-section.component';
 import { AddEventItemComponent } from './components/add-event-item/add-event-item.component';
+import { AddEventInputDialogComponent } from './components/add-event-input-dialog/add-event-input-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddEventItemComponent } from './components/add-event-item/add-event-ite
     DefaultTextInputComponent,
     DefaultNumericInputComponent,
     AddEventNewItemSectionComponent,
-    AddEventItemComponent
+    AddEventItemComponent,
+    AddEventInputDialogComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { AddEventItemComponent } from './components/add-event-item/add-event-ite
     ReactiveFormsModule
   ],
   entryComponents: [
-    AddEventResourceDialogComponent
+    AddEventResourceDialogComponent,
+    AddEventInputDialogComponent
   ]
 })
 export class AddEventModule { }

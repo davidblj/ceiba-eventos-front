@@ -1,22 +1,23 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { size } from '../add-event-section-icon/add-event-section-icon.component';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormConfig } from '../../shared/form-config';
-import { NumericValidator } from '../../shared/numeric.validator';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/add-event-resource-dialog.component';
+import { NumericValidator } from '../../shared/numeric.validator';
+import { size } from '../add-event-section-icon/add-event-section-icon.component';
 
 @Component({
-  selector: 'app-add-event-resource-dialog',
-  templateUrl: './add-event-resource-dialog.component.html',
-  styleUrls: ['./add-event-resource-dialog.component.scss']
+  selector: 'app-add-event-input-dialog',
+  templateUrl: './add-event-input-dialog.component.html',
+  styleUrls: ['./add-event-input-dialog.component.scss']
 })
-export class AddEventResourceDialogComponent implements OnInit {
+export class AddEventInputDialogComponent implements OnInit {
 
   formConfig: FormConfig;
   form: FormGroup;
 
   size: size = size.large;
-  iconLink: String = "assets/icons/gift-box_indigo.svg";
+  iconLink: String = "assets/icons/currency_indigo.svg";
 
   constructor(private fb: FormBuilder, 
               public dialogRef: MatDialogRef<AddEventResourceDialogComponent>,
@@ -37,8 +38,7 @@ export class AddEventResourceDialogComponent implements OnInit {
       price: [ '', [
         Validators.required, 
         NumericValidator()
-      ]],
-      amount: [ '' ]
+      ]]    
     });
 
     this.patchForm();
@@ -48,8 +48,8 @@ export class AddEventResourceDialogComponent implements OnInit {
   patchForm() {
     
     if (this.data) {
-      const resource = this.data.resource.value;      
-      this.form.patchValue(resource);
+      const input = this.data.input.value;      
+      this.form.patchValue(input);
     }
   }
 

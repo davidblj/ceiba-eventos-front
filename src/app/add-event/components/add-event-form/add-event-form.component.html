@@ -26,7 +26,11 @@
 
         <div class="form__section form__section--last-child">
             <app-add-event-new-item-section
-                [sectionInformation]="inputSectionInfo">                
+                [sectionInformation]="inputSectionInfo"
+                [items]="inputs"
+                (onNewItem)="onNewInputHandler()"
+                (onEditItem)="onEditInputHandler($event)"
+                (onDeleteItem)="onDeleteInputHandler($event)">                
             </app-add-event-new-item-section>
         </div>
         

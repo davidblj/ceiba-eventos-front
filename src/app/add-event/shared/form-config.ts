@@ -1,5 +1,5 @@
-import { TextInput } from "../../shared/text-input.interface";
-import { NumericInput } from "../../shared/numeric-input.interface";
+import { TextInput } from "./text-input.interface";
+import { NumericInput } from "./numeric-input.interface";
 import { FormGroup } from "@angular/forms";
 
 export class FormConfig {
