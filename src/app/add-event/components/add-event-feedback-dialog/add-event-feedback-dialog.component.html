@@ -1,0 +1,30 @@
+
+<div mat-dialog-content class="feedback-dialog-content">
+
+  <ng-template [ngIf]="succeed" [ngIfElse]="failure">    
+    <div class="event-dialog-content__intent">
+      <app-add-event-section-icon [source]="succeessIconLink" [size]="size">
+      </app-add-event-section-icon>
+    </div>
+
+    <div class="event-dialog-content__message">
+      Se guardó el evento.
+    </div>
+
+    <button mat-stroked-button color="primary">
+      Gestionar
+    </button>
+  </ng-template>  
+  
+  <ng-template #failure>
+      <div class="event-dialog-content__intent">
+        <app-add-event-section-icon [source]="failureIconLink" [size]="size">
+        </app-add-event-section-icon>
+      </div>
+  
+      <div class="event-dialog-content__message">
+        Oops!, intentalo de nuevo.
+      </div>
+  </ng-template>
+
+</div>

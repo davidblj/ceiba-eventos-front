@@ -18,27 +18,27 @@ export class AddEventResourceDialogComponent implements OnInit {
   size: size = size.large;
   iconLink: String = "assets/icons/gift-box_indigo.svg";
 
-  constructor(private fb: FormBuilder, 
-              public dialogRef: MatDialogRef<AddEventResourceDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private fb: FormBuilder,
+    public dialogRef: MatDialogRef<AddEventResourceDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
 
     this.form = this.fb.group({
-      name: [ '', [
-        Validators.required, 
+      name: ['', [
+        Validators.required,
         Validators.minLength(3),
         Validators.maxLength(24)
       ]],
-      description: [ '', [
+      description: ['', [
         Validators.minLength(10),
         Validators.maxLength(150)
       ]],
-      price: [ '', [
-        Validators.required, 
+      price: ['', [
+        Validators.required,
         NumericValidator()
       ]],
-      amount: [ '' ]
+      amount: ['']
     });
 
     this.patchForm();
@@ -46,9 +46,9 @@ export class AddEventResourceDialogComponent implements OnInit {
   }
 
   patchForm() {
-    
+
     if (this.data) {
-      const resource = this.data.item.value;      
+      const resource = this.data.item.value;
       this.form.patchValue(resource);
     }
   }
@@ -57,7 +57,7 @@ export class AddEventResourceDialogComponent implements OnInit {
     this.formConfig = new FormConfig(this.form);
   }
 
-  onClickHandler() {    
+  onClickHandler() {
     this.dialogRef.close(this.form);
   }
 }

@@ -15,13 +15,14 @@ import { DefaultNumericInputComponent } from './components/add-event-form-fields
 import { AddEventNewItemSectionComponent } from './components/add-event-new-item-section/add-event-new-item-section.component';
 import { AddEventItemComponent } from './components/add-event-item/add-event-item.component';
 import { AddEventInputDialogComponent } from './components/add-event-input-dialog/add-event-input-dialog.component';
+import { AddEventFeedbackDialogComponent } from './components/add-event-feedback-dialog/add-event-feedback-dialog.component';
 
 @NgModule({
   declarations: [
     AddEventComponent,
     FormContainerComponent,
-    AddEventFormComponent,        
-    AddEventNewItemComponent,    
+    AddEventFormComponent,
+    AddEventNewItemComponent,
     AddEventSectionIconComponent,
     AddEventResourceDialogComponent,
     AddEventAmountComponent,
@@ -29,7 +30,8 @@ import { AddEventInputDialogComponent } from './components/add-event-input-dialo
     DefaultNumericInputComponent,
     AddEventNewItemSectionComponent,
     AddEventItemComponent,
-    AddEventInputDialogComponent
+    AddEventInputDialogComponent,
+    AddEventFeedbackDialogComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { AddEventInputDialogComponent } from './components/add-event-input-dialo
   ],
   entryComponents: [
     AddEventResourceDialogComponent,
-    AddEventInputDialogComponent
+    AddEventInputDialogComponent,
+    AddEventFeedbackDialogComponent
   ]
 })
 export class AddEventModule { }

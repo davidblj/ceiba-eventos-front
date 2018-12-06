@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-import { FormConfig } from './form-config'
+import { FormConfig } from './form-config';
 import { SectionInformation } from '../../shared/section-information.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/add-event-resource-dialog.component';
@@ -8,6 +8,7 @@ import { Item } from '../../shared/item.interface';
 import { AddEventInputDialogComponent } from '../add-event-input-dialog/add-event-input-dialog.component';
 import { DialogCreator } from '../../shared/dialogs/dialog-creator';
 import { FormArrayLengthValidator } from '../../shared/validators/form-array-length.validator';
+import { AddEventFeedbackDialogComponent } from '../add-event-feedback-dialog/add-event-feedback-dialog.component';
 
 @Component({
   selector: 'app-add-event-form',
@@ -23,18 +24,21 @@ export class AddEventFormComponent implements OnInit {
   resourceDialogCreator: DialogCreator;
   inputDialogCreator: DialogCreator;
 
-  constructor(private fb: FormBuilder, 
-              public dialog: MatDialog) { }
+  loading: boolean;
+  spinnerWidth = 56;
+
+  constructor(private fb: FormBuilder,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
-    
+
     this.form = this.fb.group({
-      name: [ '', [
-        Validators.required, 
+      name: ['', [
+        Validators.required,
         Validators.minLength(3),
         Validators.maxLength(24)
       ]],
-      description: [ '', [
+      description: ['', [
         Validators.minLength(10),
         Validators.maxLength(150)
       ]],
@@ -50,7 +54,7 @@ export class AddEventFormComponent implements OnInit {
 
   instantiateFormConfiguration() {
     this.formConfig = new FormConfig(this.form);
-  }  
+  }
 
   // todo: refactor
   buildResourceSectionInfo() {
@@ -59,7 +63,7 @@ export class AddEventFormComponent implements OnInit {
       iconLink: 'assets/icons/gift-box.svg',
       itemName: 'recurso',
       sectionTitle: 'Recursos *'
-    }
+    };
   }
 
   buildInputSectionInfo() {
@@ -68,41 +72,51 @@ export class AddEventFormComponent implements OnInit {
       iconLink: 'assets/icons/currency.svg',
       itemName: 'material',
       sectionTitle: 'Materiales'
-    }
+    };
   }
 
   buildDialogCreators() {
-    this.resourceDialogCreator = new DialogCreator(this.dialog, AddEventResourceDialogComponent, 
+    this.resourceDialogCreator = new DialogCreator(this.dialog, AddEventResourceDialogComponent,
       'resources', this.form);
-    this.inputDialogCreator = new DialogCreator(this.dialog, AddEventInputDialogComponent, 
+    this.inputDialogCreator = new DialogCreator(this.dialog, AddEventInputDialogComponent,
       'inputs', this.form);
   }
 
-  onNewResourceHandler() {    
+  onNewResourceHandler() {
     this.resourceDialogCreator.handleNewInput();
   }
 
   onEditResourceHandler(index: number) {
-    this.resourceDialogCreator.handleInputUpdate(index);    
+    this.resourceDialogCreator.handleInputUpdate(index);
   }
 
   onDeleteResourceHandler(index: number) {
     this.resourceDialogCreator.handleInputDelete(index);
   }
-  
-  onNewInputHandler() {    
-    this.inputDialogCreator.handleNewInput();    
+
+  onNewInputHandler() {
+    this.inputDialogCreator.handleNewInput();
   }
 
   onEditInputHandler(index: number) {
-    this.inputDialogCreator.handleInputUpdate(index);    
+    this.inputDialogCreator.handleInputUpdate(index);
   }
 
   onDeleteInputHandler(index: number) {
     this.inputDialogCreator.handleInputDelete(index);
   }
 
-  // utils  
+  onSubmit() {
+
+    // launch event
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      this.dialog.open(AddEventFeedbackDialogComponent, {});
+    }, 1000);
+  }
+
+  // utils
 
   get resources() {
     return this.form.value.resources as Item[];
