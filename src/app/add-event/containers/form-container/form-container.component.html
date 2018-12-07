@@ -1,2 +1,5 @@
 
-<app-add-event-form></app-add-event-form>
+<app-add-event-form
+    [loading]="loading"
+    (onAddNewEvent)="onAddNewEventHandler($event)">
+</app-add-event-form>

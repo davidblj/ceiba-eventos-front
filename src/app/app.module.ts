@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AddEventModule } from './add-event/add-event.module';
 
 import { MaterialModule } from './material/material.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MaterialModule } from './material/material.module';
     AddEventModule,
     MaterialModule,
     AppRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

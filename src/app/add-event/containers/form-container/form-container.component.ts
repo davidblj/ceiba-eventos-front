@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AddEventFeedbackDialogComponent } from '../../components/add-event-feedback-dialog/add-event-feedback-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { EventService } from 'src/app/core/services/event.service';
 
 @Component({
   selector: 'app-form-container',
@@ -7,9 +10,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormContainerComponent implements OnInit {
 
-  constructor() { }
+  loading: boolean;
+
+  constructor(public dialogService: MatDialog,
+    private eventService: EventService) { }
 
   ngOnInit() {
   }
 
+  onAddNewEventHandler(event: Event) {
+
+    console.log(event);
+    this.loading = true;
+    this.eventService.add(event).subscribe(
+      this.handleSuccessfullResponse(),
+      this.handleFailedResponse()
+    );
+  }
+
+  handleSuccessfullResponse() {
+
+    return (response) => {
+
+      this.loading = false;
+      this.openDialog({ responseSucceed: true});
+    };
+  }
+
+  handleFailedResponse() {
+
+    return (error) => {
+
+      this.loading = false;
+      this.openDialog({ responseSucceed: false});
+    };
+  }
+
+  openDialog(data) {
+
+    return this.dialogService.open(AddEventFeedbackDialogComponent, {
+      width: '80vw',
+      panelClass: 'dialog',
+      data
+    });
+  }
 }

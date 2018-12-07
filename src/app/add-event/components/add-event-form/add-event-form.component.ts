@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormConfig } from './form-config';
 import { SectionInformation } from '../../shared/section-information.interface';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,7 +8,6 @@ import { Item } from '../../shared/item.interface';
 import { AddEventInputDialogComponent } from '../add-event-input-dialog/add-event-input-dialog.component';
 import { DialogCreator } from '../../shared/dialogs/dialog-creator';
 import { FormArrayLengthValidator } from '../../shared/validators/form-array-length.validator';
-import { AddEventFeedbackDialogComponent } from '../add-event-feedback-dialog/add-event-feedback-dialog.component';
 
 @Component({
   selector: 'app-add-event-form',
@@ -17,18 +16,22 @@ import { AddEventFeedbackDialogComponent } from '../add-event-feedback-dialog/ad
 })
 export class AddEventFormComponent implements OnInit {
 
+  @Input()
+  loading: boolean;
+
+  @Output()
+  onAddNewEvent = new EventEmitter<Event>();
+
   formConfig: FormConfig;
   form: FormGroup;
   inputSectionInfo: SectionInformation;
   resourceSectionInfo: SectionInformation;
   resourceDialogCreator: DialogCreator;
   inputDialogCreator: DialogCreator;
-
-  loading: boolean;
   spinnerWidth = 56;
 
   constructor(private fb: FormBuilder,
-    public dialog: MatDialog) { }
+              public dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -107,17 +110,8 @@ export class AddEventFormComponent implements OnInit {
   }
 
   onSubmit() {
-
-    // launch event
-    this.loading = true;
-    setTimeout(() => {
-
-      this.loading = false;
-      this.dialog.open(AddEventFeedbackDialogComponent, {
-        width: '80vw',
-        panelClass: 'dialog',
-      });
-    }, 1000);
+    const event = this.form.value as Event;
+    this.onAddNewEvent.emit(event);
   }
 
   // utils

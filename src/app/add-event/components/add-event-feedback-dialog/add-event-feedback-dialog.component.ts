@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { size } from '../add-event-section-icon/add-event-section-icon.component';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-event-feedback-dialog',
@@ -13,8 +14,12 @@ export class AddEventFeedbackDialogComponent implements OnInit {
   size: size = size.large;
   succeed = true;
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+  }
+
+  get responsedSucceed() {
+    return this.data.responseSucceed;
   }
 }
