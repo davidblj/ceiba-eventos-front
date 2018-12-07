@@ -111,8 +111,12 @@ export class AddEventFormComponent implements OnInit {
     // launch event
     this.loading = true;
     setTimeout(() => {
+
       this.loading = false;
-      this.dialog.open(AddEventFeedbackDialogComponent, {});
+      this.dialog.open(AddEventFeedbackDialogComponent, {
+        width: '80vw',
+        panelClass: 'dialog',
+      });
     }, 1000);
   }
 

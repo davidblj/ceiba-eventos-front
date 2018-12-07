@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';   
+
+.feedback-dialog-content {    
+
+    &--display-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__message {           
+        
+        text-align: center;
+        &:not(:last-child) {
+            margin: 10px 0 30px
+        };        
+    }
+}

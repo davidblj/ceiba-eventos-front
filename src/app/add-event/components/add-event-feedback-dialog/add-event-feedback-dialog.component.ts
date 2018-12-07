@@ -17,5 +17,4 @@ export class AddEventFeedbackDialogComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

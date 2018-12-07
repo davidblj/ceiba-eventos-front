@@ -10,7 +10,7 @@ export class DialogCreator {
     parentForm: FormGroup;
 
     constructor(dialogService: MatDialog, dialogComponent: any, formArrayId: string, parentForm: FormGroup) {
-        this.dialogService = dialogService
+        this.dialogService = dialogService;
         this.dialogComponent = dialogComponent;
         this.formArrayId = formArrayId;
         this.parentForm = parentForm;
@@ -18,29 +18,35 @@ export class DialogCreator {
 
     handleNewInput() {
 
-        let dialog = this.openDialog(null);
+        const dialog = this.openDialog(null);
         dialog.afterClosed().subscribe(this.onDialogClosed());
     }
 
     onDialogClosed() {
-     
+
         return (form: FormGroup) => {
-            if (form) this.formArray.push(form);          
-        }
+
+            if (form) {
+                this.formArray.push(form)
+            }
+        };
     }
 
     handleInputUpdate(index: number) {
 
-        let item = this.formArray.at(index);
-        let dialog = this.openDialog({item});
+        const item = this.formArray.at(index);
+        const dialog = this.openDialog({ item });
         dialog.afterClosed().subscribe(this.onEditDialogClosed(index));
     }
 
     onEditDialogClosed(index: number) {
 
         return (item: FormGroup) => {
-            if (item) this.formArray.setControl(index, item);        
-        }
+
+            if (item) {
+                this.formArray.setControl(index, item)
+            }
+        };
     }
 
     handleInputDelete(index: number) {
@@ -48,11 +54,11 @@ export class DialogCreator {
     }
 
     openDialog(data) {
-        
+
         return this.dialogService.open(this.dialogComponent, {
-            width: '80vw',      
+            width: '80vw',
             panelClass: 'dialog',
-            data    
+            data
         });
     }
 
