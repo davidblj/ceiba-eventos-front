@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/parqueadero/vehiculos/agregar',
+    redirectTo: 'eventos/agregar',
     pathMatch: 'full'
   }
 ];

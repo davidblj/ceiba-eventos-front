@@ -15,7 +15,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   declarations: [],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
@@ -23,7 +22,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatButtonModule,
     MatDialogModule,
     MatRippleModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   exports: [
     MatInputModule,
