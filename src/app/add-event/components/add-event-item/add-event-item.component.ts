@@ -31,14 +31,14 @@ export class AddEventItemComponent implements OnInit {
   isFavored(): boolean {
     return this.favorite === this.item.name;
   }
-  
-  emitOnClick() {  
+
+  emitOnClick() {
 
     if (this.isFavored()) {
       this.onClick.emit("");
     } else {
       this.onClick.emit(this.item.name);
-    }    
+    }
   }
 
   emitOnEdit() {

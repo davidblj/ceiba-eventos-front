@@ -26,11 +26,11 @@ export class FormConfig {
             label: 'Nombre',
             minLength: 3,
             maxLength: 24,
-            optional: false            
-        }
+            optional: false
+        };
     }
 
-    buildDescriptionInput() { 
+    buildDescriptionInput() {
 
         this._description = {
             appearence: 'standard',
@@ -40,7 +40,7 @@ export class FormConfig {
             minLength: 10,
             maxLength: 150,
             optional: true
-        }
+        };
     }
 
     buildPriceInput() {
@@ -51,7 +51,7 @@ export class FormConfig {
             icon: 'attach_money',
             label: 'Precio total',
             optional: false
-        }
+        };
     }
 
     get name() {

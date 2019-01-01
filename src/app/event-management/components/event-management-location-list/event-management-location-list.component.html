@@ -1,0 +1,10 @@
+
+<div class="list">
+    <div *ngFor="let location of locationList">
+        <app-event-management-location-item
+            [item]="location"
+            [selectedItem]="selectedLocation"
+            (onClick)="onClickHandler($event)">        
+        </app-event-management-location-item>
+    </div>
+</div>

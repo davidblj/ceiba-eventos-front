@@ -2,5 +2,16 @@
 <mat-form-field class="form-input"
                 appearance="outline">
   <mat-label>lugar</mat-label>
-  <input matInput>
+  
+  <div *ngIf="default; else emptyInput">
+    <input matInput 
+           [value]="default"
+           [formControl]="control">
+  </div>
+
+  <ng-template #emptyInput>    
+    <input matInput
+           [formControl]="control">
+  </ng-template>
+
 </mat-form-field>

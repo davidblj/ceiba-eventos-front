@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventManagementFormComponent implements OnInit {
 
+  selectedLocation: String;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelectionHandler(selectedLocation: String) {
+    this.selectedLocation = selectedLocation;
+  }
+
+  onChangeHandler(inputValue: String) {
+    this.selectedLocation = inputValue;
+  }
 }

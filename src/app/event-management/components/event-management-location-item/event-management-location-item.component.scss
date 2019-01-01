@@ -1,0 +1,27 @@
+@import "~src/scss/theme-colors.scss";
+
+.location-item {
+        
+    color: $primary-light-2;
+    transition: all .6s;
+    margin: 5px;
+    padding: 10px 45px;
+    border-radius: 2px;
+    text-align: center;
+    background-size: 240%;
+    display: inline-block;    
+    background-image: linear-gradient(120deg,
+                                      transparent 0%,
+                                      transparent 50%,
+                                      $primary-light-1 50%);   
+
+    &--selected {
+        transform: translateX(-5px);
+        background-position: 100%;
+        color: white;        
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -23,10 +23,10 @@ export class FormConfig {
             minLength: 3,
             maxLength: 24,
             optional: false
-        }
+        };
     }
 
-    buildDescriptionInput() { 
+    buildDescriptionInput() {
 
         this._description = {
             appearence: 'outline',
@@ -36,7 +36,7 @@ export class FormConfig {
             minLength: 10,
             maxLength: 150,
             optional: true
-        }
+        };
     }
 
     get name() {

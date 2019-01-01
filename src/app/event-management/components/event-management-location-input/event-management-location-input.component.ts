@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-event-management-location-input',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventManagementLocationInputComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  default: String;
 
-  ngOnInit() {
+  @Output()
+  onChange = new EventEmitter<String>();
+
+  control;
+
+  constructor() {
+    this.control = new FormControl();
   }
 
+  ngOnInit() {
+    this.control.valueChanges.subscribe(value => this.onChange.emit(value));
+  }
 }
