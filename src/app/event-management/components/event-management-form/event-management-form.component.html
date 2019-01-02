@@ -8,7 +8,8 @@
   <div class="form__inquiry">
     <p class="mat-body">¿En que lugar estás gestionando el evento?</p>
     <app-event-management-location-input
-      [default]="selectedLocation"
+      [defaultValue]="selectedLocation"
+      [locationControl]="locationControl"
       (onChange)="onChangeHandler($event)">    
     </app-event-management-location-input>
   </div>
@@ -21,7 +22,10 @@
   </div>
 
   <div class="form__footer">
-    <button mat-fab class="mat-elevation-z0">
+    <button class="mat-elevation-z0"
+            [disabled]="locationControl.invalid"
+            (click)="onClickHandler()"
+            mat-fab>
       <mat-icon>done</mat-icon>
     </button>
   </div>  

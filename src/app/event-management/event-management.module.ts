@@ -8,6 +8,8 @@ import { MaterialModule } from '../material/material.module';
 import { EventManagementLocationListComponent } from './components/event-management-location-list/event-management-location-list.component';
 import { EventManagementLocationItemComponent } from './components/event-management-location-item/event-management-location-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormContainerComponent } from './containers/form-container/form-container.component';
+import { LocationService } from './shared/services/location.service';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     EventManagementFormComponent,
     EventManagementLocationInputComponent,
     EventManagementLocationListComponent,
-    EventManagementLocationItemComponent
+    EventManagementLocationItemComponent,
+    FormContainerComponent
   ],
   imports: [
     CommonModule,
     EventManagementRoutingModule,
     MaterialModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    LocationService
   ]
 })
 export class EventManagementModule { }

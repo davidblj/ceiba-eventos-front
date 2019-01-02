@@ -9,18 +9,40 @@ import { FormControl } from '@angular/forms';
 export class EventManagementLocationInputComponent implements OnInit {
 
   @Input()
-  default: String;
+  set defaultValue(defaultValue: String) {
+    this.setControlvalue(defaultValue);
+  }
+
+  @Input()
+  locationControl: FormControl;
 
   @Output()
   onChange = new EventEmitter<String>();
 
-  control;
+  default: String;
 
   constructor() {
-    this.control = new FormControl();
   }
 
   ngOnInit() {
-    this.control.valueChanges.subscribe(value => this.onChange.emit(value));
+    this.locationControl.valueChanges.subscribe(value => this.onChange.emit(value));
+  }
+
+  setControlvalue(defaultValue: String) {
+
+    if (this.locationControl && defaultValue !== '') {
+
+      // a manual set must be performed to update the
+      // value length hint
+      this.locationControl.setValue(defaultValue);
+    }
+  }
+
+  get value() {
+    return this.locationControl.value;
+  }
+
+  get isInvalid() {
+    return this.locationControl.invalid;
   }
 }

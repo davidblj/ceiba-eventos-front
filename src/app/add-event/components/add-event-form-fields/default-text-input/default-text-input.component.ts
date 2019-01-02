@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TextInput } from '../../../shared/text-input.interface'
+import { TextInput } from '../../../shared/text-input.interface';
 
 @Component({
   selector: 'app-default-text-input',
@@ -14,10 +14,10 @@ export class DefaultTextInputComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {   
+  ngOnInit() {
   }
 
-  get value() {    
+  get value() {
     return this.textInput.control.value;
   }
 

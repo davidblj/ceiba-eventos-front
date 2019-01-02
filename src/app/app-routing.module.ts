@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: './add-event/add-event.module#AddEventModule'
   },
   {
-    path: 'eventos/gestion',
+    path: 'eventos/:id/gestion',
     loadChildren: './event-management/event-management.module#EventManagementModule'
   },
   {

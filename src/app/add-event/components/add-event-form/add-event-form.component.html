@@ -41,8 +41,8 @@
 
         <ng-template [ngIf]="!loading" [ngIfElse]="spinner">
             <button mat-fab
-                
-                (click)="onSubmit()">
+                    [disabled]="form.invalid"
+                    (click)="onSubmit()">
                 <mat-icon>send</mat-icon>
             </button>
         </ng-template>
