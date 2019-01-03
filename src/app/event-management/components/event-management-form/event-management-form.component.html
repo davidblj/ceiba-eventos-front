@@ -1,33 +1,3 @@
-
-<div class="form">
-  
-  <div class="form__icon">
-    <img src="assets/icons/pin_indigo.svg">
-  </div>
-
-  <div class="form__inquiry">
-    <p class="mat-body">¿En que lugar estás gestionando el evento?</p>
-    <app-event-management-location-input
-      [defaultValue]="selectedLocation"
-      [locationControl]="locationControl"
-      (onChange)="onChangeHandler($event)">    
-    </app-event-management-location-input>
-  </div>
-
-  <div class="form__location-list">
-    <app-event-management-location-list
-      [selectedLocation]="selectedLocation"
-      (onSelection)="onSelectionHandler($event)">        
-    </app-event-management-location-list>
-  </div>
-
-  <div class="form__footer">
-    <button class="mat-elevation-z0"
-            [disabled]="locationControl.invalid"
-            (click)="onClickHandler()"
-            mat-fab>
-      <mat-icon>done</mat-icon>
-    </button>
-  </div>  
-
-</div>
+<p>
+  event-management-form works!
+</p>

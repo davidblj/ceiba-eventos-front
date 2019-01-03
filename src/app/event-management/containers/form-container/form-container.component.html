@@ -1,4 +1,11 @@
 
-<app-event-management-form
-  (onAddNewLocation)="onAddNewLocationHandler($event)">
-</app-event-management-form>
+<div *ngIf="!locationIsSet; else managementForm">
+  <app-event-management-location-form
+    (onAddNewLocation)="onAddNewLocationHandler($event)">
+  </app-event-management-location-form>
+</div>
+
+<ng-template #managementForm>
+  <app-event-management-form>    
+  </app-event-management-form>
+</ng-template>

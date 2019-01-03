@@ -8,12 +8,16 @@ import { LocationService } from '../../shared/services/location.service';
 })
 export class FormContainerComponent implements OnInit {
 
+  locationIsSet = false;
+  location: Location;
+
   constructor(private locationService: LocationService) { }
 
   ngOnInit() {
   }
 
   onAddNewLocationHandler(location: Location) {
-    console.log(location);
+    this.location = location;
+    this.locationIsSet = true;
   }
 }
