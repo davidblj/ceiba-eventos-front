@@ -27,6 +27,7 @@
         <div class="form__location-list">
           <app-event-management-location-list
             [selectedLocation]="selectedLocation"
+            [locationList]="locations"
             (onSelection)="onSelectionHandler($event)">        
           </app-event-management-location-list>
         </div>

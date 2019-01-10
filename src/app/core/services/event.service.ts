@@ -11,5 +11,5 @@ export class EventService {
 
   add(event: Event): Observable<any> {
     return this.http.post('events', event);
-  }
+  }  
 }

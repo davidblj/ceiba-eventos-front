@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '../../shared/location.interface';
@@ -10,6 +10,9 @@ import { Location } from '../../shared/location.interface';
 })
 export class EventManagementLocationFormComponent implements OnInit {
 
+  @Input()
+  locations: Location[];
+  
   @Output()
   onAddNewLocation = new EventEmitter<Location>();
 

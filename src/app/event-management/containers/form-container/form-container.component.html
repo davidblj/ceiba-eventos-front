@@ -1,6 +1,7 @@
 
 <div *ngIf="!locationIsSet; else managementForm">
   <app-event-management-location-form
+    [locations]="locations"
     (onAddNewLocation)="onAddNewLocationHandler($event)">
   </app-event-management-location-form>
 </div>

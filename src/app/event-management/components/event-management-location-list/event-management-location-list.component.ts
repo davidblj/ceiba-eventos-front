@@ -7,7 +7,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class EventManagementLocationListComponent implements OnInit {
 
-  locationList = [{name: 'Personal Soft'}, {name: 'Camacol'}, {name: 'Ceiba'}, {name: 'Agaval'}, {name: 'Avianca'}, {name: 'Proteccion'}];
+  // locationList = [{name: 'Personal Soft'}, {name: 'Camacol'}, {name: 'Ceiba'}, {name: 'Agaval'}, {name: 'Avianca'}, {name: 'Proteccion'}];
+
+  @Input()
+  locationList: Location;
 
   @Input()
   selectedLocation: String;
