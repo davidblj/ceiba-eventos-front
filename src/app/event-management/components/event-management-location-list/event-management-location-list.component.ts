@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Locations } from '../../shared/locations.interface';
 
 @Component({
   selector: 'app-event-management-location-list',
@@ -7,10 +8,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class EventManagementLocationListComponent implements OnInit {
 
-  // locationList = [{name: 'Personal Soft'}, {name: 'Camacol'}, {name: 'Ceiba'}, {name: 'Agaval'}, {name: 'Avianca'}, {name: 'Proteccion'}];
+  // locationList = ['Personal Soft', 'Camacol', 'Ceiba', 'Agaval', 'Avianca', 'Proteccion'];
 
   @Input()
-  locationList: Location;
+  locations: Locations
 
   @Input()
   selectedLocation: String;
@@ -26,5 +27,9 @@ export class EventManagementLocationListComponent implements OnInit {
   onClickHandler(name: String) {
     this.selectedLocation = name;
     this.onSelection.emit(name);
+  }
+
+  get locationList() {
+    return this.locations ? this.locations.locations : [];
   }
 }

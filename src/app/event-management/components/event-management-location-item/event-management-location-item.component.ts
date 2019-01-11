@@ -9,7 +9,7 @@ import { Item } from '../../shared/item.interface';
 export class EventManagementLocationItemComponent implements OnInit {
 
   @Input()
-  item: Item;
+  item: String;
 
   @Input()
   selectedItem: String;
@@ -23,10 +23,10 @@ export class EventManagementLocationItemComponent implements OnInit {
   }
 
   emitOnClick() {
-    this.onClick.emit(this.item.name);
+    this.onClick.emit(this.item);
   }
 
   get isSelected() {
-    return this.item.name === this.selectedItem;
+    return this.item === this.selectedItem;
   }
 }

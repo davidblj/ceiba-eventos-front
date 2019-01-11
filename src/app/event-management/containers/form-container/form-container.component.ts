@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LocationService } from '../../shared/services/location.service';
 import { Location } from '../../shared/location.interface';
+import { Locations } from '../../shared/locations.interface';
 
 @Component({
   selector: 'app-form-container',
@@ -9,7 +10,7 @@ import { Location } from '../../shared/location.interface';
 })
 export class FormContainerComponent implements OnInit {
 
-  locations: Location[];  
+  locations: Locations;  
   locationIsSet = false;
   location: Location;
 
@@ -17,6 +18,7 @@ export class FormContainerComponent implements OnInit {
 
   ngOnInit() {
     this.locationService.get().subscribe(locations => {
+      console.log(locations)
       this.locations = locations;
     })
   }
