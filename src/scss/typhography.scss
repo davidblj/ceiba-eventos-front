@@ -1,10 +1,25 @@
 @import '~@angular/material/theming';
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+
+// for flashy titles
 
 $title-typography-config: mat-typography-config(
   $font-family: 'Lobster, cursive', 
   $title: mat-typography-level(25px, 25px, 400)  
 );
 
+// a pretty number typhography
+
+$numeric-typography-config: mat-typography-config(
+  $font-family: 'Major Mono Display, cursive', 
+  $title: mat-typography-level(50px, 25px, 400),
+  $body-1: mat-typography-level(35px, 15px, 400)  
+);
+
 $title-font-size: mat-font-size($title-typography-config, title);
 $title-font-family: mat-font-family($title-typography-config);
+
+$numeric-title-font-size: mat-font-size($numeric-typography-config, title);
+$numeric-body-font-size: mat-font-size($numeric-typography-config, body-1);
+$numeric-font-family: mat-font-family($numeric-typography-config);

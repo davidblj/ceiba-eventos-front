@@ -1,0 +1,62 @@
+@import "~src/scss/theme-colors.scss";
+@import "~src/scss/typhography.scss";
+
+.resource {
+            
+    height: 80px;
+    padding: 0 10px;
+    background: #eeeeee;    
+    border-radius: 15px;
+    position: relative;
+
+    &__container {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: inherit;
+        width: inherit;
+    }
+
+    &__left-content {
+
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__name {
+
+        padding-left: 10px;
+        font-size: 20px;
+    }
+
+    &__available-quantity {
+
+        font-size: $numeric-title-font-size;
+        font-family: $numeric-font-family;
+        background: $main-color-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__assigned-quantity {                
+
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        text-align: center;
+        width: 39px;
+        left: -59px;
+        background: $main-color-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;        
+    }
+
+    &__icon {
+        margin-right: 5px;
+    }
+
+    &__background-icon {
+
+    }
+}

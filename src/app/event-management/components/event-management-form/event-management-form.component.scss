@@ -1,0 +1,37 @@
+@import "~src/scss/theme-colors.scss";
+
+$side-padding: 35px;
+$border-radius: 30px;
+
+.new-attendant {
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__input-container {
+                
+        display: flex;
+        flex-shrink: 0;
+        flex-direction: column;
+        justify-content: center;  
+        align-items: center;
+        padding: 50px $side-padding 20px;
+    }
+
+    &__summary-container {
+
+        padding: 0 $side-padding 35px;
+        flex-shrink: 0;
+    }
+    
+    &__picker-container {        
+
+        flex: 1 1 auto;
+        padding: 0 22px;
+        background: $main-color-gradient; 
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        padding-top: 40px;
+    }
+}

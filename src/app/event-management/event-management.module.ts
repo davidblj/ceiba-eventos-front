@@ -11,6 +11,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormContainerComponent } from './containers/form-container/form-container.component';
 import { LocationService } from './shared/services/location.service';
 import { EventManagementFormComponent } from './components/event-management-form/event-management-form.component';
+import { EventManagementAttendantInputComponent } from './components/event-management-attendant-input/event-management-attendant-input.component';
+import { EventManagementAssignedResourcesComponent } from './components/event-management-assigned-resources/event-management-assigned-resources.component';
+import { EventManagementAssignedResourceItemComponent } from './components/event-management-assigned-resource-item/event-management-assigned-resource-item.component';
+import { EventManagementResourcePickerComponent } from './components/event-management-resource-picker/event-management-resource-picker.component';
+import { EventManagementResourceItemComponent } from './components/event-management-resource-item/event-management-resource-item.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { EventManagementFormComponent } from './components/event-management-form
     EventManagementLocationListComponent,
     EventManagementLocationItemComponent,
     FormContainerComponent,
-    EventManagementFormComponent
+    EventManagementFormComponent,
+    EventManagementAttendantInputComponent,
+    EventManagementAssignedResourcesComponent,
+    EventManagementAssignedResourceItemComponent,
+    EventManagementResourcePickerComponent,
+    EventManagementResourceItemComponent     
   ],
   imports: [
     CommonModule,
