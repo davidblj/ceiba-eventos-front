@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventManagementAssignedResourcesComponent implements OnInit {
 
-  resources = ['Beers', 'Peanut', 'Gift Card', 'Bonusses']
+  assignedResources = [
+    {name: 'Beers', assigned: true}, 
+    {name: 'Peanuts', assigned: false}
+  ]
 
   constructor() { }
 

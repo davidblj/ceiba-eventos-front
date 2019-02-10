@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AssignedResource } from '../../shared/assigned-resource.interface';
 
 @Component({
   selector: 'app-event-management-assigned-resource-item',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventManagementAssignedResourceItemComponent implements OnInit {
 
   @Input()
-  name: String;
+  assignedResource: AssignedResource;
 
   constructor() { }
 

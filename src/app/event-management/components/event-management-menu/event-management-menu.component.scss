@@ -1,0 +1,68 @@
+@import "~src/scss/theme-colors.scss";
+
+$icon-spacing: 40px;
+
+.resource-menu {    
+
+    position: relative;
+    overflow: none;
+
+    &__toggle {
+
+        position: fixed;
+        top: 20px;
+        right: 15px;
+    }
+
+    &__icons {
+
+        z-index: 1500;
+        color: white;        
+    }
+
+    &__details {
+        
+        position: absolute;
+        left: $icon-spacing;
+        top: $icon-spacing;
+        transform: scale(1.5);
+    }
+    
+    &__edit {
+
+        position: absolute;        
+        bottom: $icon-spacing;
+        right: $icon-spacing;
+        transform: scale(1.5);
+    }
+    
+    &__hide-menu {
+
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        right: 15px;    
+    }
+
+
+    &__context {
+
+        position: fixed;
+        clip-path: ellipse(80px 80px at 100% 0);
+        right: 0;        
+        width: 80px;
+        height: 80px;
+        background-color: $accent;
+        transition: .4s all;
+        opacity: 0;
+
+        &--expanded {
+
+            z-index: 1000;            
+            clip-path: ellipse(180px 180px at 100% 0);
+            width: 180px;
+            height: 180px;
+            opacity: 1;
+        }
+    }    
+}

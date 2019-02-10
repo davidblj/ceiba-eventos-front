@@ -1,7 +1,6 @@
 
-<div class="assigned-resource">
+<div class="assigned-resource" [ngClass]="{'assigned-resource--selected': assignedResource.assigned}">
   <span class="assigned-resource__tag mat-body">
-      {{name}}
+      {{assignedResource.name}}
   </span>
-  <!-- <mat-icon class="assigned-resource__icon">clear</mat-icon> -->
 </div>

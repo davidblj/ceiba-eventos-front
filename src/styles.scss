@@ -11,12 +11,19 @@
 }
 
 html {
+    
     height: 100vh;
-    border-bottom: 1rem;
-    // font-size: 62.5%;   // 1rem = 10px
+    border-bottom: 1rem;    
+
+    // // fixed positioned elements with transformed properties fix
+    // -webkit-transform: scale(1, 1);
+    // -moz-transform: scale(1, 1);
+    // -ms-transform: scale(1, 1);
+    // -o-transform: scale(1, 1);
+    // transform: scale(1, 1);
 }
 
 body {
     box-sizing: border-box;
-    position: relative;
+    position: relative;    
 }

@@ -1,0 +1,15 @@
+
+<div class="resource-menu"
+     (click)="onMenuToggleClick()">
+  <mat-icon class="resource-menu__toggle">unfold_more</mat-icon>
+  
+  <div class="resource-menu__context" [ngClass]="{'resource-menu__context--expanded': showMenu}">
+    
+    <div class="resource-menu__icons" *ngIf="showMenu">
+      <mat-icon class="resource-menu__details">details</mat-icon>
+      <mat-icon class="resource-menu__edit">edit</mat-icon>
+      <mat-icon class="resource-menu__hide-menu">unfold_less</mat-icon>
+    </div>
+
+  </div>
+</div>

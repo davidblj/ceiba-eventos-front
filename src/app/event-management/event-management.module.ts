@@ -16,6 +16,7 @@ import { EventManagementAssignedResourcesComponent } from './components/event-ma
 import { EventManagementAssignedResourceItemComponent } from './components/event-management-assigned-resource-item/event-management-assigned-resource-item.component';
 import { EventManagementResourcePickerComponent } from './components/event-management-resource-picker/event-management-resource-picker.component';
 import { EventManagementResourceItemComponent } from './components/event-management-resource-item/event-management-resource-item.component';
+import { EventManagementMenuComponent } from './components/event-management-menu/event-management-menu.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { EventManagementResourceItemComponent } from './components/event-managem
     EventManagementAssignedResourcesComponent,
     EventManagementAssignedResourceItemComponent,
     EventManagementResourcePickerComponent,
-    EventManagementResourceItemComponent     
+    EventManagementResourceItemComponent,
+    EventManagementMenuComponent     
   ],
   imports: [
     CommonModule,
