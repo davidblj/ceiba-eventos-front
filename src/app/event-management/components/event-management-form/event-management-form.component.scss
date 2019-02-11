@@ -8,20 +8,26 @@ $border-radius: 30px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    z-index: 1000;
 
     &__input-container {
                 
         display: flex;
+        position: relative;        
         flex-direction: column;
         justify-content: center;  
         align-items: center;
         padding: 50px $side-padding 30px;
+
+        & button {
+
+            position: absolute;
+            bottom: -30px;
+        }
     }
 
     &__summary-container {
 
-        padding: 35px $side-padding 35px;
+        padding: 45px $side-padding;
         border-top: 2px solid $primary;
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
@@ -30,10 +36,28 @@ $border-radius: 30px;
     &__picker-container {        
 
         flex: 1 1 auto;
+        min-height: 290px;
         padding: 0 22px;        
-        background: $main-color-gradient;
+        position: relative;
+        background: $main-color-gradient;        
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
-        padding-top: 40px;        
-    }
+        padding-top: 40px;          
+        background-repeat: no-repeat;           
+        
+        &::after {
+            
+            content: '';            
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;             
+            top: 0;
+            left: 0;            
+            background-image: url("../../../../assets/icons/handling-gift.svg");
+            background-repeat: no-repeat;
+            background-size: 210px;
+            background-position: center bottom 20px;
+        }
+    }    
 }

@@ -4,18 +4,23 @@
   <app-event-management-menu>    
   </app-event-management-menu>
 
-  <div class="new-attendant__input-container">
+  <div class="new-attendant__input-container">    
+    <button mat-fab color="accent">
+      <mat-icon>send</mat-icon>
+    </button>
+
     <app-event-management-attendant-input>      
     </app-event-management-attendant-input>        
   </div>
 
-  <div class="new-attendant__summary-container">        
+  <div class="new-attendant__summary-container">    
     <app-event-management-assigned-resources>
-    </app-event-management-assigned-resources>    
+    </app-event-management-assigned-resources>
   </div>
 
-  <div class="new-attendant__picker-container">
+  <div class="new-attendant__picker-container">    
     <app-event-management-resource-picker>      
-    </app-event-management-resource-picker>
+    </app-event-management-resource-picker>    
   </div>
+  
 </div>

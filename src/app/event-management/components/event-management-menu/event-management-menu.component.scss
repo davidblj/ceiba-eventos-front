@@ -10,8 +10,10 @@ $icon-spacing: 40px;
     &__toggle {
 
         position: fixed;
+        z-index: 1000;
         top: 20px;
         right: 15px;
+        transform: rotate(45deg);
     }
 
     &__icons {
@@ -41,7 +43,8 @@ $icon-spacing: 40px;
         position: absolute;
         right: 40px;
         top: 20px;
-        right: 15px;    
+        right: 15px;
+        transform: rotate(45deg);    
     }
 
 

@@ -1,6 +1,18 @@
 
 <div class="picker">
+    
+    <div class="picker__toolbar mat-elevation-z8">
+        <button mat-icon-button color="accent">
+            <mat-icon>clear</mat-icon>
+        </button>  
+        
+        <button mat-icon-button color="accent">
+            <mat-icon>update</mat-icon>
+        </button> 
+    </div>
+
     <div class="picker__amount-bar"></div>
+    
     <div class="picker__resources">
 
         <!-- replace with ng-for -->
@@ -14,13 +26,6 @@
             </app-event-management-resource-item>
         </div>                
 
-    </div>
-    <div class="picker__clear-button">
-        <button mat-mini-fab color="accent">
-            <mat-icon>clear</mat-icon>
-        </button>        
-    </div>
-    <div class="picker__icon">
-        <img src="assets/icons/handling-gift.svg">
-    </div>
+    </div>            
+   
 </div>

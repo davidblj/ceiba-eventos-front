@@ -25,29 +25,28 @@ $radious: 55px;
     &__resource {
 
         opacity: 0.9;
+
         &:not(:last-child) {
             margin-bottom: 25px;
         }
     }
 
-    &__icon {
+    &__toolbar {
 
-        // z-index: 0;
-        position: fixed;
-        bottom: 20px;
-        left: 50vw;
-        transform: translateX(-50%);
-        margin: auto;
-        
-        img {
-            width: 240px;
-        }
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        position: absolute;
+        top: -75px;
+        right: 0;
     }
 
-    &__clear-button {
+    &__send-button {
 
-        position: absolute;
-        top: -59px;
-        right: -15px;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);        
+        z-index: 1000;
     }
 } 
