@@ -1,0 +1,17 @@
+<div class="form__footer">
+
+  <ng-template [ngIf]="!loading" [ngIfElse]="spinner">
+      <button mat-fab
+              [disabled]="disabled"
+              (click)="onSubmitHandler()">
+          <mat-icon>send</mat-icon>
+      </button>
+  </ng-template>
+      
+  <ng-template #spinner>
+      <mat-spinner
+          [diameter]="spinnerWidth">
+      </mat-spinner>
+  </ng-template>
+ 
+</div>

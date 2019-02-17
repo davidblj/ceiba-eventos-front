@@ -37,22 +37,9 @@
         
     </div>
 
-    <div class="form__footer">
-
-        <ng-template [ngIf]="!loading" [ngIfElse]="spinner">
-            <button mat-fab
-                    [disabled]="form.invalid"
-                    (click)="onSubmit()">
-                <mat-icon>send</mat-icon>
-            </button>
-        </ng-template>
-            
-        <ng-template #spinner>
-            <mat-spinner
-                [diameter]="spinnerWidth">
-            </mat-spinner>
-        </ng-template>
-       
-    </div>
+    <app-form-footer
+        [loading]="loading"
+        [disabled]="!form.disabled">        
+    </app-form-footer>    
 
 </div>

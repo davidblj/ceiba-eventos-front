@@ -1,10 +1,11 @@
+@import "~src/scss/theme-colors.scss";
 
 .form {
     
     &__text-inputs-section {       
         background-color: rgba(black, 0.035); 
         padding: 30px 30px 50px;
-        border-bottom: solid rgba(black, 0.2) 1px;        
+        border-bottom: solid $linear-divider-color 1px;        
     }
 
     &__input {
@@ -15,22 +16,11 @@
         padding: 25px 15px 70px;        
 
         &--divider {
-            // todo: make a new global color
-            border-bottom: solid rgba(black, 0.2) 1px;
+            border-bottom: solid $linear-divider-color 1px;
         }
 
         &--last-child {
-            margin-bottom: 50px; 
+            padding-bottom: 50px; 
         }
-    }
-
-    &__footer {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        padding: 15px;        
-        background: darken(white, 5%);                       
-        position: fixed;
-        bottom: 0px;
-    }
+    }    
 }

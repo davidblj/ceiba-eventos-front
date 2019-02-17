@@ -16,6 +16,7 @@ import { AddEventNewItemSectionComponent } from './components/add-event-new-item
 import { AddEventItemComponent } from './components/add-event-item/add-event-item.component';
 import { AddEventInputDialogComponent } from './components/add-event-input-dialog/add-event-input-dialog.component';
 import { AddEventFeedbackDialogComponent } from './components/add-event-feedback-dialog/add-event-feedback-dialog.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AddEventFeedbackDialogComponent } from './components/add-event-feedback
   ],
   imports: [
     CommonModule,
+    SharedModule,
     AddEventRoutingModule,
     MaterialModule,
     ReactiveFormsModule
