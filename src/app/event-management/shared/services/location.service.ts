@@ -11,8 +11,8 @@ export class LocationService {
 
   constructor(private http: HttpClient) { }
 
-  add(location: Location, id: number) {
-    return this.http.post(`events/${id}/locations`, location);
+  add(location: Location) {
+    return this.http.post(`events/locations`, location);
   }
 
   get(): Observable<Locations> {

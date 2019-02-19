@@ -6,7 +6,7 @@
       <div class="resource__left-content">        
         
         <div class="resource__name mat-body">
-          Beers          
+          {{name}}          
         </div>
 
         <div class="resource__icons">          
@@ -17,21 +17,23 @@
           <button mat-icon-button>
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
-                    
-          <mat-icon class="resource__favorite-icon">favorite</mat-icon>            
+           
+          <div *ngIf="isFavorite">
+            <mat-icon class="resource__favorite-icon">favorite</mat-icon>            
+          </div>
         </div>
 
       </div>              
       
-      <div class="resource__right-content">                
+      <div class="resource__right-content" *ngIf="stock">                
         <div class="resource__available-quantity">
-          /20
+          {{stock}}
         </div>        
       </div>
                           
   </div>
 
   <div class="resource__assigned-quantity mat-title">
-    13
+    {{amount}}
   </div>
 </div>

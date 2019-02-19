@@ -8,24 +8,18 @@
         
         <button mat-icon-button color="accent">
             <mat-icon>update</mat-icon>
-        </button> 
+        </button>
     </div>
 
     <div class="picker__amount-bar"></div>
     
     <div class="picker__resources">
-
-        <!-- replace with ng-for -->
-        <div class="picker__resource">
-            <app-event-management-resource-item>            
+        <div *ngFor="let resource of resources" class="picker__resource">
+            <app-event-management-resource-item
+                [resource]="resource"
+                (onAmauntChanged)="onAmountChangedHandler($event)">            
             </app-event-management-resource-item>
-        </div>                
-
-        <div class="picker__resource">
-            <app-event-management-resource-item>            
-            </app-event-management-resource-item>
-        </div>                
-
+        </div>          
     </div>            
    
 </div>

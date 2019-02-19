@@ -15,7 +15,7 @@ export class EventManagementLocationFormComponent implements OnInit {
   locations: Locations;
   
   @Output()
-  onAddNewLocation = new EventEmitter<Location>();
+  onAddNewLocation = new EventEmitter<String>();
 
   selectedLocation: String;
   locationControl: FormControl;
@@ -23,14 +23,9 @@ export class EventManagementLocationFormComponent implements OnInit {
 
   constructor(route: ActivatedRoute) {
     this.setFormControl();
-    this.getEventId(route);
   }
 
   ngOnInit() { }
-
-  getEventId(route: ActivatedRoute) {
-    route.params.subscribe(params => { this.eventId = params['id']; });
-  }
 
   setFormControl() {
 
@@ -51,7 +46,6 @@ export class EventManagementLocationFormComponent implements OnInit {
   }
 
   onClickHandler() {
-    const location: Location = { name: this.locationControl.value, 'event_id': this.eventId };
-    this.onAddNewLocation.emit(location);
+    this.onAddNewLocation.emit(this.locationControl.value);
   }
 }

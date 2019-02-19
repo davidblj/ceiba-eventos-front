@@ -18,6 +18,7 @@ import { EventManagementResourcePickerComponent } from './components/event-manag
 import { EventManagementResourceItemComponent } from './components/event-management-resource-item/event-management-resource-item.component';
 import { EventManagementMenuComponent } from './components/event-management-menu/event-management-menu.component';
 import { SharedModule } from '../shared/shared.module';
+import { ResourcePickerContainerComponent } from './containers/resource-picker-container/resource-picker-container.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SharedModule } from '../shared/shared.module';
     EventManagementAssignedResourceItemComponent,
     EventManagementResourcePickerComponent,
     EventManagementResourceItemComponent,
-    EventManagementMenuComponent     
+    EventManagementMenuComponent,
+    ResourcePickerContainerComponent,
   ],
   imports: [
     CommonModule,

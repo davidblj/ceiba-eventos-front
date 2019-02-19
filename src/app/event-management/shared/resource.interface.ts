@@ -1,4 +1,5 @@
 
-export interface Resource {
-    name: String
+export interface ManagedResource {
+    name: String,
+    currentAmount: number
 }

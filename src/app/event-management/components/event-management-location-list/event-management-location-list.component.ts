@@ -8,8 +8,6 @@ import { Locations } from '../../shared/locations.interface';
 })
 export class EventManagementLocationListComponent implements OnInit {
 
-  // locationList = ['Personal Soft', 'Camacol', 'Ceiba', 'Agaval', 'Avianca', 'Proteccion'];
-
   @Input()
   locations: Locations
 
