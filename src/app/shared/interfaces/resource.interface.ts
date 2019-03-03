@@ -5,4 +5,6 @@ export interface Resource {
     price: number;
     description: String;
     stock: number;
+    id: number;
+    quantity: number;
 }

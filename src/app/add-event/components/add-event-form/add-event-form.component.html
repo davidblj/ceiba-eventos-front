@@ -39,7 +39,8 @@
 
     <app-form-footer
         [loading]="loading"
-        [disabled]="!form.disabled">        
+        [disabled]="form.invalid"
+        (onSubmit)="onSubmitHandler()">        
     </app-form-footer>    
 
 </div>

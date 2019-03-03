@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-event-management-form',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventManagementFormComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-  }
 
+    this.form = this.fb.group({
+      attendant: [''],
+      resources: this.fb.array([])
+    });    
+  }
 }

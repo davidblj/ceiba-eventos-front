@@ -10,11 +10,15 @@
         </div>
 
         <div class="resource__icons">          
-          <button mat-icon-button>
+          <button mat-icon-button 
+            [disabled]="controlsDisabledStatus"
+            (click)="emitOnAmountChanged(plusOneUnit)">
             <mat-icon>keyboard_arrow_up</mat-icon>
           </button>          
           
-          <button mat-icon-button>
+          <button mat-icon-button 
+            [disabled]="oneUnitDownButtonDisabledStatus"
+            (click)="emitOnAmountChanged(minusOneUnit)">
             <mat-icon>keyboard_arrow_down</mat-icon>
           </button>
            
@@ -26,14 +30,15 @@
       </div>              
       
       <div class="resource__right-content" *ngIf="stock">                
-        <div class="resource__available-quantity">
-          {{stock}}
+        <div class="resource__available-quantity"
+             [ngClass]="{'resource__available-quantity--disabled': controlsDisabledStatus}" >
+          {{quantity.availableQuantity}}
         </div>        
       </div>
                           
   </div>
 
   <div class="resource__assigned-quantity mat-title">
-    {{amount}}
+    {{quantity.localQuantity}}
   </div>
 </div>

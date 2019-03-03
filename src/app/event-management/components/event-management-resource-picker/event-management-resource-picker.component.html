@@ -17,6 +17,7 @@
         <div *ngFor="let resource of resources" class="picker__resource">
             <app-event-management-resource-item
                 [resource]="resource"
+                [quantity]="getResourceQuantity(resource.id)"
                 (onAmauntChanged)="onAmountChangedHandler($event)">            
             </app-event-management-resource-item>
         </div>          

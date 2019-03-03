@@ -11,7 +11,7 @@ export class LocationService {
 
   constructor(private http: HttpClient) { }
 
-  add(location: Location) {
+  add(location: Location): Observable<any> {
     return this.http.post(`events/locations`, location);
   }
 

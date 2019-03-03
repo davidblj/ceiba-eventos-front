@@ -109,7 +109,7 @@ export class AddEventFormComponent implements OnInit {
     this.inputDialogCreator.handleInputDelete(index);
   }
 
-  onSubmit() {
+  onSubmitHandler() {
     const event = this.form.value as Event;
     this.onAddNewEvent.emit(event);
   }

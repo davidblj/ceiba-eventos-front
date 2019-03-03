@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Resource } from 'src/app/shared/interfaces/resource.interface';
-import { ManagedResource } from '../../shared/resource.interface';
+import { ResourceQuantity } from '../../shared/resource-quantity.interface';
+import { LocalResourceQuantity } from '../../shared/local-resource-quantity';
 
 @Component({
   selector: 'app-event-management-resource-item',
@@ -13,18 +14,17 @@ export class EventManagementResourceItemComponent implements OnInit {
   resource: Resource;
 
   @Input()
-  favoriteResource: String;
+  quantity: LocalResourceQuantity;
 
   @Input()
-  amount: number;
+  favoriteResource: String;
 
   @Output()
-  onAmauntChanged = new EventEmitter<ManagedResource>();
+  onAmauntChanged = new EventEmitter<ResourceQuantity>();
 
   constructor() { }
 
   ngOnInit() {
-    this.amount = 0;
   }
 
   get stock() {
@@ -32,7 +32,7 @@ export class EventManagementResourceItemComponent implements OnInit {
   }
 
   get isFavorite() {
-    return this.resource.name == this.favoriteResource;
+    return this.resource.name === this.favoriteResource;
   }
 
   get name() {
@@ -40,8 +40,28 @@ export class EventManagementResourceItemComponent implements OnInit {
     return firstLetter + this.resource.name.substring(1);
   }
 
-  onAmountChanged(step: number) {
-    const currentAmount = this.amount + step;
-    this.onAmauntChanged.emit({name: this.resource.name, currentAmount});
+  get minusOneUnit(): Number {
+    return -1;
+  }
+
+  get plusOneUnit(): Number {
+    return 1;
+  }
+
+  get controlsDisabledStatus(): Boolean {
+    return this.quantity.availableQuantity === 0;
+  }
+
+  get oneUnitDownButtonDisabledStatus(): Boolean {
+    return (this.quantity.localQuantity === 0);
+  }
+
+  emitOnAmountChanged(step: number) {
+
+    // handle multiple consecutive tabs
+
+    const amount = this.quantity.localQuantity + step;
+    this.quantity.localQuantity = amount;
+    this.onAmauntChanged.emit({resourceId: this.resource.id, amount: step});
   }
 }

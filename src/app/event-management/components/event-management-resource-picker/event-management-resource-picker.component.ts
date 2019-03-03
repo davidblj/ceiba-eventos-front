@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Resource } from 'src/app/shared/interfaces/resource.interface';
-import { ManagedResource } from '../../shared/resource.interface';
+import { ResourceQuantity } from '../../shared/resource-quantity.interface';
+import { LocalResourceQuantity } from '../../shared/local-resource-quantity';
 
 @Component({
   selector: 'app-event-management-resource-picker',
@@ -13,14 +14,21 @@ export class EventManagementResourcePickerComponent implements OnInit {
   resources: Resource[];
 
   @Input()
-  onAmountChanged = new EventEmitter<ManagedResource>();
+  quantities: LocalResourceQuantity[];
+
+  @Output()
+  onAmountChanged = new EventEmitter<ResourceQuantity>();  
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAmountChangedHandler(resource: ManagedResource) {
+  onAmountChangedHandler(resource: ResourceQuantity) {    
     this.onAmountChanged.emit(resource);
+  }
+
+  getResourceQuantity(id: number): LocalResourceQuantity {
+    return this.quantities.find(resourceQuantity => resourceQuantity.resourceId === id)
   }
 }

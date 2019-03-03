@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddEventFeedbackDialogComponent } from '../../components/add-event-feedback-dialog/add-event-feedback-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { EventService } from 'src/app/core/services/event.service';
+import { Event } from 'src/app/shared/interfaces/event.interface';
 
 @Component({
   selector: 'app-form-container',

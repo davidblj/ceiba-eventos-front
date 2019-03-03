@@ -27,7 +27,7 @@ export class DialogCreator {
         return (form: FormGroup) => {
 
             if (form) {
-                this.formArray.push(form)
+                this.formArray.push(form);
             }
         };
     }
@@ -44,7 +44,7 @@ export class DialogCreator {
         return (item: FormGroup) => {
 
             if (item) {
-                this.formArray.setControl(index, item)
+                this.formArray.setControl(index, item);
             }
         };
     }

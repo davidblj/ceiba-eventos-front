@@ -49,6 +49,11 @@
         background: $main-color-gradient;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        &--disabled {            
+            color: $warn;
+            -webkit-text-fill-color: unset;
+        }
     }
     
     &__assigned-quantity {                
