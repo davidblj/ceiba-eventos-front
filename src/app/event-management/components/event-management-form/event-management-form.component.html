@@ -7,19 +7,16 @@
   <div class="new-attendant__input-container">        
     <app-event-management-attendant-input>      
     </app-event-management-attendant-input>        
-  </div>
-
-  <div class="new-attendant__summary-container">    
-    <app-event-management-assigned-resources>
-    </app-event-management-assigned-resources>
-  </div>
+  </div>  
 
   <div class="new-attendant__picker-container">    
-    <app-resource-picker-container>      
+    <app-resource-picker-container
+      [attendantResourcesControl]="attendantResourcesControl">      
     </app-resource-picker-container>
   </div>
   
-  <app-form-footer>    
+  <app-form-footer
+    (onSubmit)="onSubmitHandler()">    
   </app-form-footer>
   
 </div>

@@ -1,12 +1,23 @@
+@import "~src/scss/theme-colors.scss";
 
-$radious: 55px;
+$border-radius: 20px;
 
-.picker {    
+.summary {
+    
+    padding: 45px 35px;
+    border-top: 2px solid $primary;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+.picker {
    
+    padding: 50px 22px 0;
     display: flex;
     align-items: stretch;
-    position: relative;
+    position: relative;    
     opacity: 1;
+    border-top: 1px solid $linear-divider-color;                               
 
     &__amount-bar {
 
@@ -24,7 +35,7 @@ $radious: 55px;
 
     &__resource {
 
-        opacity: 0.95;
+        opacity: 0.87;
 
         &:not(:last-child) {
             margin-bottom: 25px;
@@ -37,17 +48,8 @@ $radious: 55px;
         padding: 5px;
         border-radius: 10px;
         position: absolute;
-        top: -77px;
-        right: 0;
-    }
-
-    &__send-button {
-
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);        
-        z-index: 1000;
-    }
+        top: -30px;        
+        right: 22px;
+    }    
 }
  

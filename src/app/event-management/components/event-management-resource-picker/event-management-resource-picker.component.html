@@ -1,6 +1,12 @@
 
-<div class="picker">
-    
+<div class="summary">
+    <app-event-management-assigned-resources
+        [resources]="resources"
+        [attendantResources]="attendantResources">
+    </app-event-management-assigned-resources>
+</div>
+
+<div class="picker">    
     <div class="picker__toolbar mat-elevation-z3">
         <button mat-icon-button color="accent">
             <mat-icon>clear</mat-icon>
@@ -21,6 +27,5 @@
                 (onAmauntChanged)="onAmountChangedHandler($event)">            
             </app-event-management-resource-item>
         </div>          
-    </div>            
-   
+    </div>               
 </div>

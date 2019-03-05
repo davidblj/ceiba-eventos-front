@@ -8,6 +8,8 @@ import { AssignedResource } from '../../shared/assigned-resource.interface';
 })
 export class EventManagementAssignedResourceItemComponent implements OnInit {
 
+  // TODO: add animations using sass @animations
+
   @Input()
   assignedResource: AssignedResource;
 
@@ -15,5 +17,4 @@ export class EventManagementAssignedResourceItemComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

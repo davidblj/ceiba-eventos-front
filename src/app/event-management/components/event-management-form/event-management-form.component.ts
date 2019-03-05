@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 @Component({
+
   selector: 'app-event-management-form',
   templateUrl: './event-management-form.component.html',
   styleUrls: ['./event-management-form.component.scss']
@@ -16,7 +16,16 @@ export class EventManagementFormComponent implements OnInit {
 
     this.form = this.fb.group({
       attendant: [''],
-      resources: this.fb.array([])
+      attendantResources: this.fb.array([])
     });    
+  }
+
+  onSubmitHandler() {
+
+    console.log(this.form.value);
+  }
+
+  get attendantResourcesControl() {
+    return this.form.controls['attendantResources'] as FormArray;
   }
 }

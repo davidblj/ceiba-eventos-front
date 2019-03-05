@@ -17,23 +17,13 @@ $border-radius: 20px;
         justify-content: center;  
         align-items: center;
         padding: 55px $side-padding 30px;       
-    }
-
-    &__summary-container {
-
-        padding: 45px $side-padding;
-        border-top: 2px solid $primary;
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
-    }
+    }    
     
     &__picker-container {        
 
         flex: 1 1 auto;
         min-height: 325px;
-        padding: 50px 22px 0;        
         position: relative;
-        border-top: 1px solid $linear-divider-color;                               
         background-repeat: no-repeat;           
         
         &::after {

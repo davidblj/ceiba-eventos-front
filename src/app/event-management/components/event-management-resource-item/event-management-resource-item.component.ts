@@ -58,7 +58,8 @@ export class EventManagementResourceItemComponent implements OnInit {
 
   emitOnAmountChanged(step: number) {
 
-    // handle multiple consecutive tabs
+    // TODO: handle multiple consecutive tabs, and turn that step into an 
+    // amount greater than one
 
     const amount = this.quantity.localQuantity + step;
     this.quantity.localQuantity = amount;

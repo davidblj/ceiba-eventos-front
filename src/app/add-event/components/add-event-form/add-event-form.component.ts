@@ -79,6 +79,7 @@ export class AddEventFormComponent implements OnInit {
   }
 
   buildDialogCreators() {
+    
     this.resourceDialogCreator = new DialogCreator(this.dialog, AddEventResourceDialogComponent,
       'resources', this.form);
     this.inputDialogCreator = new DialogCreator(this.dialog, AddEventInputDialogComponent,

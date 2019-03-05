@@ -1,5 +1,5 @@
 
 export interface AssignedResource {
-    name: String,
-    assigned: Boolean
+    name: String;
+    assigned: Boolean;
 }
