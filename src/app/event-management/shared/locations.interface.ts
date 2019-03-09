@@ -1,4 +1,4 @@
 
 export interface Locations {
-    locations: String[]
+    locations: String[];
 }

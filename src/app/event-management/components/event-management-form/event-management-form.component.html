@@ -5,8 +5,9 @@
   </app-event-management-menu>
 
   <div class="new-attendant__input-container">        
-    <app-event-management-attendant-input>      
-    </app-event-management-attendant-input>        
+    <app-attendant-input-container
+      [attendantControl]="attendantControl">      
+    </app-attendant-input-container>    
   </div>  
 
   <div class="new-attendant__picker-container">    
@@ -16,6 +17,7 @@
   </div>
   
   <app-form-footer
+    [disabled]="form.invalid"
     (onSubmit)="onSubmitHandler()">    
   </app-form-footer>
   

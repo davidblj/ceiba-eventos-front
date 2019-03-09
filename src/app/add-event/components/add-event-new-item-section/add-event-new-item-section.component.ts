@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { SectionInformation } from '../../shared/section-information.interface'
+import { SectionInformation } from '../../shared/section-information.interface';
 import { Item } from '../../shared/item.interface';
 
 @Component({
@@ -16,7 +16,7 @@ export class AddEventNewItemSectionComponent implements OnInit {
   items: Item[];
 
   @Input()
-  favoriteControl: boolean = true;
+  favoriteControl = true;
 
   @Output()
   onNewItem: EventEmitter<String> = new EventEmitter<String>();
@@ -39,7 +39,7 @@ export class AddEventNewItemSectionComponent implements OnInit {
   }
 
   onNewFavoriteItemHandler(favorite: string) {
-    if (this.favoriteControl) this.favorite = favorite;
+    if (this.favoriteControl) { this.favorite = favorite; }
   }
 
   onEditHandler(index: number) {

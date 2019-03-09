@@ -7,7 +7,7 @@ import { AddEventResourceDialogComponent } from '../add-event-resource-dialog/ad
 import { Item } from '../../shared/item.interface';
 import { AddEventInputDialogComponent } from '../add-event-input-dialog/add-event-input-dialog.component';
 import { DialogCreator } from '../../shared/dialogs/dialog-creator';
-import { FormArrayLengthValidator } from '../../shared/validators/form-array-length.validator';
+import { FormArrayLengthValidator } from 'src/app/shared/validators/form-array-length.validator';
 
 @Component({
   selector: 'app-add-event-form',

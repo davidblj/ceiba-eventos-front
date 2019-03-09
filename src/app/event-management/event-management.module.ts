@@ -11,7 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormContainerComponent } from './containers/form-container/form-container.component';
 import { LocationService } from './shared/services/location.service';
 import { EventManagementFormComponent } from './components/event-management-form/event-management-form.component';
-import { EventManagementAttendantInputComponent } from './components/event-management-attendant-input/event-management-attendant-input.component';
 import { EventManagementAssignedResourcesComponent } from './components/event-management-assigned-resources/event-management-assigned-resources.component';
 import { EventManagementAssignedResourceItemComponent } from './components/event-management-assigned-resource-item/event-management-assigned-resource-item.component';
 import { EventManagementResourcePickerComponent } from './components/event-management-resource-picker/event-management-resource-picker.component';
@@ -19,6 +18,9 @@ import { EventManagementResourceItemComponent } from './components/event-managem
 import { EventManagementMenuComponent } from './components/event-management-menu/event-management-menu.component';
 import { SharedModule } from '../shared/shared.module';
 import { ResourcePickerContainerComponent } from './containers/resource-picker-container/resource-picker-container.component';
+import { SearchTextInputComponent } from './components/event-management-form-fields/search-text-input/search-text-input.component';
+import { AttendantInputContainerComponent } from './containers/attendant-input-container/attendant-input-container.component';
+import { EmployeeService } from './shared/services/employee.service';
 
 
 @NgModule({
@@ -30,13 +32,14 @@ import { ResourcePickerContainerComponent } from './containers/resource-picker-c
     EventManagementLocationItemComponent,
     FormContainerComponent,
     EventManagementFormComponent,
-    EventManagementAttendantInputComponent,
     EventManagementAssignedResourcesComponent,
     EventManagementAssignedResourceItemComponent,
     EventManagementResourcePickerComponent,
     EventManagementResourceItemComponent,
     EventManagementMenuComponent,
     ResourcePickerContainerComponent,
+    SearchTextInputComponent,
+    AttendantInputContainerComponent,
   ],
   imports: [
     CommonModule,
@@ -46,7 +49,8 @@ import { ResourcePickerContainerComponent } from './containers/resource-picker-c
     ReactiveFormsModule
   ],
   providers: [
-    LocationService
+    LocationService,
+    EmployeeService
   ]
 })
 export class EventManagementModule { }

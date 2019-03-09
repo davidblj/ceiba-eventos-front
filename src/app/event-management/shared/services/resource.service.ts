@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResourceQuantity } from '../resource-quantity.interface'
+import { ResourceQuantity } from '../resource-quantity.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({

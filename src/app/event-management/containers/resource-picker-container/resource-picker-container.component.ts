@@ -45,6 +45,7 @@ export class ResourcePickerContainerComponent implements OnInit {
     this.eventResources$ = this.eventService.getResources(this.eventId);       
   }  
   
+  // TODO: change localQuantity with a more apropietly name
   initializeQuantitiesArray() {
 
     this.eventResources$.subscribe(eventResources => {

@@ -1,0 +1,18 @@
+
+<mat-form-field appearance="outline" class="form-input">
+  <mat-label>Participante</mat-label>
+  <input matInput 
+         [formControl]="searchTextInputControl"
+         [matAutocomplete]="options">
+  <mat-icon matSuffix color="accent">search</mat-icon>
+
+</mat-form-field>
+
+<mat-autocomplete 
+    #options="matAutocomplete"
+    (optionSelected)="onOptionSelectedHandler($event)" >
+  <mat-option *ngFor="let employee of employees" 
+              [value]="employee.fullName">    
+    {{employee.fullName}}
+  </mat-option>
+</mat-autocomplete>
