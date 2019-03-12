@@ -21,7 +21,7 @@ export class ResourcePickerContainerComponent implements OnInit {
   resourcePickerChildComponent: EventManagementResourcePickerComponent;
 
   @Input()
-  attendantResourcesControl: FormArray;
+  assignedResourcesControl: FormArray;
 
   eventId: number;
   eventResources$: Observable<EventResources>;

@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { Employee } from 'src/app/event-management/shared/employee.inerface';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-search-text-input',
@@ -11,7 +12,7 @@ import { Employee } from 'src/app/event-management/shared/employee.inerface';
 export class SearchTextInputComponent implements OnInit {
 
   @Input()
-  attendantControl: FormControl;
+  employeeIdControl: FormControl;
 
   @Input()
   employees: Employee[];
@@ -38,9 +39,14 @@ export class SearchTextInputComponent implements OnInit {
         .subscribe(value => this.onTextInput.emit(value));
   }
 
-  onOptionSelectedHandler() {
-
+  onOptionSelectedHandler(selectedEvent: MatAutocompleteSelectedEvent) {
+            
     const userInput = this.searchTextInputControl.value;
-    this.attendantControl.setValue(userInput);
-  } 
+    const selectedEmployee = this.employees.find(employee => employee.full_name === userInput);
+    this.employeeIdControl.setValue(selectedEmployee.id);
+  }
+
+  resetSearchTextControl() {
+    this.searchTextInputControl.setValue("");
+  }
 }

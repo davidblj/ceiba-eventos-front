@@ -1,8 +1,9 @@
 
-export interface AttendantResource {
+// TODO: check out this class, and refactor it accordingly
+export interface AssignedResource {
 
-    managerId: Number;
-    timeAdded: Date;
-    resourceId: Number;
+    manager_idd: Number;
+    time_added: Date;
+    resource_id: Number;
     resourceAssignedQuantity: Number;
 }

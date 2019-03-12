@@ -12,7 +12,7 @@
     #options="matAutocomplete"
     (optionSelected)="onOptionSelectedHandler($event)" >
   <mat-option *ngFor="let employee of employees" 
-              [value]="employee.fullName">    
-    {{employee.fullName}}
+              [value]="employee.full_name">    
+    {{employee.full_name}}
   </mat-option>
 </mat-autocomplete>

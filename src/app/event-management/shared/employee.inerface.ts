@@ -1,6 +1,6 @@
 
 export interface Employee {
 
-    fullName: String;
+    full_name: String;
     id: number;
 }

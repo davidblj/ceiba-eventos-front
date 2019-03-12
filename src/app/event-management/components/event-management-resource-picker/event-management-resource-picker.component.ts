@@ -18,7 +18,7 @@ export class EventManagementResourcePickerComponent implements OnInit {
   quantities: LocalResourceQuantity[];
 
   @Input()
-  attendantResourcesControl: FormArray;
+  assignedResourcesControl: FormArray;
 
   @Output()
   onAmountChanged = new EventEmitter<ResourceQuantity>();  
@@ -49,7 +49,7 @@ export class EventManagementResourcePickerComponent implements OnInit {
   unsetAttendantResourceFor(localResourceQuantity: LocalResourceQuantity) {
 
     const attendantResourceIndex = this.getAttendantResourceIndex(localResourceQuantity.resourceId);    
-    this.attendantResourcesControl.removeAt(attendantResourceIndex);
+    this.assignedResourcesControl.removeAt(attendantResourceIndex);
   }
 
   setOrUpdateAttendantResourceFor(localResourceQuantity: LocalResourceQuantity) {
@@ -59,15 +59,15 @@ export class EventManagementResourcePickerComponent implements OnInit {
     const noAttendantResourceFound = attendantResourceIndex === -1;
 
     if (noAttendantResourceFound) {      
-      this.attendantResourcesControl.push(attendantResource);
+      this.assignedResourcesControl.push(attendantResource);
     } else {        
-      this.attendantResourcesControl.setControl(attendantResourceIndex, attendantResource);
+      this.assignedResourcesControl.setControl(attendantResourceIndex, attendantResource);
     }
   }
 
   getAttendantResourceIndex(resourceId: Number): number {
 
-    const attendantResourcesControls = this.attendantResourcesControl.controls.map(control => control.value);
+    const attendantResourcesControls = this.assignedResourcesControl.controls.map(control => control.value);
     return attendantResourcesControls.findIndex(attendantResourceControl => {
       return attendantResourceControl.resourceId === resourceId;
     });
@@ -76,14 +76,12 @@ export class EventManagementResourcePickerComponent implements OnInit {
   createNewAttendantResourceFrom(localResourceQuantity: LocalResourceQuantity): FormGroup {
 
     return this.fb.group({
-      managerId: 1,
-      resourceAssignedQuantity: localResourceQuantity.realQuantity,
-      resourceId: localResourceQuantity.resourceId,
-      timeAdded: new Date()
+      shared_amount: localResourceQuantity.realQuantity,
+      resource_id: localResourceQuantity.resourceId,
     });
   }
 
-  get attendantResources() {
-    return this.attendantResourcesControl.value;
+  get assignedResources() {
+    return this.assignedResourcesControl.value;
   }
 }

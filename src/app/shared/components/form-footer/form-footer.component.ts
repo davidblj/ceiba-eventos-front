@@ -24,4 +24,5 @@ export class FormFooterComponent implements OnInit {
   onSubmitHandler() {
     this.onSubmit.emit();
   }
+  
 }

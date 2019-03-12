@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { EmployeeService } from '../../shared/services/employee.service';
 import { Employee } from '../../shared/employee.inerface';
 import { FormControl } from '@angular/forms';
+import { SearchTextInputComponent } from '../../components/event-management-form-fields/search-text-input/search-text-input.component';
 
 @Component({
   selector: 'app-attendant-input-container',
@@ -10,8 +11,11 @@ import { FormControl } from '@angular/forms';
 })
 export class AttendantInputContainerComponent implements OnInit {
 
+  @ViewChild(SearchTextInputComponent)
+  searchTextInputComponent: SearchTextInputComponent;
+
   @Input()
-  attendantControl: FormControl;
+  employeeIdControl: FormControl;
 
   employees: Employee[];
 
@@ -34,5 +38,9 @@ export class AttendantInputContainerComponent implements OnInit {
     this.employeeService.getBy(employee).subscribe(
       result => this.employees = result.employees
     );
+  }
+
+  resetInput() {
+    this.searchTextInputComponent.resetSearchTextControl();
   }
 }

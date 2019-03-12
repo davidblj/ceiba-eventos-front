@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Resource } from 'src/app/shared/interfaces/resource.interface';
-import { FormArray } from '@angular/forms';
-import { AttendantResource } from '../../shared/attendant-resource.interface';
+import { AssignedResource } from '../../shared/attendant-resource.interface';
 
 @Component({
   selector: 'app-event-management-assigned-resources',
@@ -14,14 +13,14 @@ export class EventManagementAssignedResourcesComponent implements OnInit {
   resources: Resource[];
 
   @Input()
-  attendantResources: AttendantResource[];  
+  assignedResources: AssignedResource[];  
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  get assignedResources() {
+  get assignedResourcesStatus() {
     
     return this.resources.map(resource => {
       return {
@@ -33,8 +32,8 @@ export class EventManagementAssignedResourcesComponent implements OnInit {
 
   resourceStatus(resource: Resource): boolean {
     
-    return this.attendantResources.some(attendantResource => 
-      attendantResource.resourceId === resource.id
+    return this.assignedResources.some(assignedResources => 
+      assignedResources.resource_id === resource.id
     );
   }
 }
