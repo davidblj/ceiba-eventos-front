@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Attendant } from '../../shared/attendant.interface';
 import { AttendantService } from '../../shared/services/attendant.service';
 import { EventManagementFormComponent } from '../../components/event-management-form/event-management-form.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form-container',
@@ -24,10 +25,10 @@ export class FormContainerComponent implements OnInit {
 
   constructor(private locationService: LocationService, private attendantService: AttendantService, 
               route: ActivatedRoute) { 
-    this.getEventId(route);
+    this.getEventId(route);    
   }
 
-  ngOnInit() {    
+  ngOnInit() {      
     this.getLocations();
   }
 
@@ -47,8 +48,7 @@ export class FormContainerComponent implements OnInit {
   handleSuccessfullResponse() {
 
     return () => {
-      // todo: show chip
-      this.eventManagementFormComponent.resetForm();
+      this.eventManagementFormComponent.handleFormSuccessfulSubmit();
     };
   }
 

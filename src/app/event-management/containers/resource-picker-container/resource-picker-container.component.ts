@@ -45,7 +45,7 @@ export class ResourcePickerContainerComponent implements OnInit {
     this.eventResources$ = this.eventService.getResources(this.eventId);       
   }  
   
-  // TODO: change localQuantity with a more apropietly name
+  // TODO: change localQuantity with an accurate name
   initializeQuantitiesArray() {
 
     this.eventResources$.subscribe(eventResources => {
@@ -54,6 +54,21 @@ export class ResourcePickerContainerComponent implements OnInit {
         return this.newLocalQuantityFor(resource);
       });
     });        
+  }
+
+  // TODO:  test
+  resetQuantitiesArray() {
+
+    this.quantities = this.quantities.map(quantity => {
+
+      // todo: new method
+      return {
+        resourceId: quantity.resourceId,
+        realQuantity: 0,
+        localQuantity: 0,
+        availableQuantity: quantity.availableQuantity
+      }
+    });
   }
 
   newLocalQuantityFor(resource: Resource): LocalResourceQuantity {
