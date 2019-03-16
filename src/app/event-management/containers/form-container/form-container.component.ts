@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Attendant } from '../../shared/attendant.interface';
 import { AttendantService } from '../../shared/services/attendant.service';
 import { EventManagementFormComponent } from '../../components/event-management-form/event-management-form.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form-container',

@@ -6,6 +6,7 @@ import { AttendantInputContainerComponent } from '../../containers/attendant-inp
 import { ResourcePickerContainerComponent } from '../../containers/resource-picker-container/resource-picker-container.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Directionality } from '@angular/cdk/bidi';
+import { EventManagementSnackbarComponent } from '../event-management-snackbar/event-management-snackbar.component';
 
 @Component({
 
@@ -26,13 +27,7 @@ export class EventManagementFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) { 
-    
-    snackBar.open("Se guardó el participante", "", {
-      duration: 200000, 
-      horizontalPosition: 'center', 
-      panelClass: "custom-snackbar"
-    });  
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -50,16 +45,35 @@ export class EventManagementFormComponent implements OnInit {
 
   handleFormSuccessfulSubmit() {
 
-    // TODO: call the snackbar here
-    this.resetForm();
+    this.openSnackBar();
+    this.resetUiState();
   }
 
-  resetForm() {
+  resetUiState() {
 
-    // TODO: test
     this.resourcePickerContainerComponent.resetQuantitiesArray();
-    this.attendantInputContainerComponent.resetInput();
-    this.form.reset();
+    this.attendantInputContainerComponent.resetInput();    
+    this.resetFormState();
+  }
+
+  resetFormState() {
+
+    this.form.reset();        
+    const formArray = this.form.controls['assigned_resources'] as FormArray;
+    
+    while (formArray.length !== 0) {
+      formArray.removeAt(0);
+    } 
+  }
+
+  openSnackBar() {
+
+    this.snackBar.openFromComponent(EventManagementSnackbarComponent, {      
+      duration: 2000, 
+      horizontalPosition: 'center', 
+      verticalPosition: 'top',
+      panelClass: 'custom-snackbar-container--position-top'
+    });  
   }
 
   get assignedResourcesControl() {

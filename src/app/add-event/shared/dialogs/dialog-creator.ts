@@ -1,6 +1,5 @@
 import { FormGroup, FormArray } from "@angular/forms";
 import { MatDialog } from '@angular/material/dialog';
-import { Item } from '../item.interface';
 
 export class DialogCreator {
 
@@ -58,6 +57,7 @@ export class DialogCreator {
         return this.dialogService.open(this.dialogComponent, {
             width: '80vw',
             panelClass: 'dialog',
+            autoFocus: false,
             data
         });
     }

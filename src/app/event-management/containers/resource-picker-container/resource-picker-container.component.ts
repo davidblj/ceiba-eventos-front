@@ -56,18 +56,15 @@ export class ResourcePickerContainerComponent implements OnInit {
     });        
   }
 
-  // TODO:  test
   resetQuantitiesArray() {
 
     this.quantities = this.quantities.map(quantity => {
-
-      // todo: new method
       return {
         resourceId: quantity.resourceId,
         realQuantity: 0,
         localQuantity: 0,
         availableQuantity: quantity.availableQuantity
-      }
+      };
     });
   }
 

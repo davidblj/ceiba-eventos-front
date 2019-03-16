@@ -21,6 +21,7 @@ import { ResourcePickerContainerComponent } from './containers/resource-picker-c
 import { SearchTextInputComponent } from './components/event-management-form-fields/search-text-input/search-text-input.component';
 import { AttendantInputContainerComponent } from './containers/attendant-input-container/attendant-input-container.component';
 import { EmployeeService } from './shared/services/employee.service';
+import { EventManagementSnackbarComponent } from './components/event-management-snackbar/event-management-snackbar.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { EmployeeService } from './shared/services/employee.service';
     ResourcePickerContainerComponent,
     SearchTextInputComponent,
     AttendantInputContainerComponent,
+    EventManagementSnackbarComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +49,9 @@ import { EmployeeService } from './shared/services/employee.service';
     EventManagementRoutingModule,
     MaterialModule,
     ReactiveFormsModule
+  ],
+  entryComponents: [
+    EventManagementSnackbarComponent
   ],
   providers: [
     LocationService,
