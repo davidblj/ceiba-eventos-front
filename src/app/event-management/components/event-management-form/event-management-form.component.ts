@@ -7,6 +7,9 @@ import { ResourcePickerContainerComponent } from '../../containers/resource-pick
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Directionality } from '@angular/cdk/bidi';
 import { EventManagementSnackbarComponent } from '../event-management-snackbar/event-management-snackbar.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalData, Status } from 'src/app/shared/interfaces/modal-data.interface';
+import { FeedbackDialogComponent } from 'src/app/shared/components/feedback-dialog/feedback-dialog.component';
 
 @Component({
 
@@ -27,7 +30,8 @@ export class EventManagementFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
+  constructor(private fb: FormBuilder, public dialogService: MatDialog, 
+              private snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -43,10 +47,28 @@ export class EventManagementFormComponent implements OnInit {
     this.onAddNewAttendant.emit(attendant);
   }
 
-  handleFormSuccessfulSubmit() {
+  handleSuccessfulFormSubmit() {
 
     this.openSnackBar();
     this.resetUiState();
+  }
+
+  handleUnsuccessfulFormSubmit() {
+
+    this.dialogService.open(FeedbackDialogComponent, {
+      width: '80vw',
+      panelClass: 'dialog',
+      data: this.buildFailedModalData()
+    });
+  }  
+
+  buildFailedModalData(): ModalData {
+
+    return {
+      status: Status.fail,
+      message: "Oops! algo ocurrio mal, intentalo de nuevo.",
+      iconSource: "assets/icons/sad.svg",
+    };
   }
 
   resetUiState() {

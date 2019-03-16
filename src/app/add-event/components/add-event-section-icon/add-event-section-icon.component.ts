@@ -23,7 +23,7 @@ export class AddEventSectionIconComponent implements OnInit {
   ngOnInit() {
   }
 
-  isOfType(size: size): boolean {
-    return size === this.size
+  isOfType(iconSize: size): boolean {
+    return iconSize === this.size;
   }
 }

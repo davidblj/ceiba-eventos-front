@@ -15,7 +15,6 @@ import { DefaultNumericInputComponent } from './components/add-event-form-fields
 import { AddEventNewItemSectionComponent } from './components/add-event-new-item-section/add-event-new-item-section.component';
 import { AddEventItemComponent } from './components/add-event-item/add-event-item.component';
 import { AddEventInputDialogComponent } from './components/add-event-input-dialog/add-event-input-dialog.component';
-import { AddEventFeedbackDialogComponent } from './components/add-event-feedback-dialog/add-event-feedback-dialog.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -31,8 +30,7 @@ import { SharedModule } from '../shared/shared.module';
     DefaultNumericInputComponent,
     AddEventNewItemSectionComponent,
     AddEventItemComponent,
-    AddEventInputDialogComponent,
-    AddEventFeedbackDialogComponent
+    AddEventInputDialogComponent
   ],
   imports: [
     CommonModule,
@@ -43,8 +41,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   entryComponents: [
     AddEventResourceDialogComponent,
-    AddEventInputDialogComponent,
-    AddEventFeedbackDialogComponent
+    AddEventInputDialogComponent
   ]
 })
 export class AddEventModule { }

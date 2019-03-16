@@ -40,14 +40,22 @@ export class FormContainerComponent implements OnInit {
     
     attendant.event_id = this.eventId;
     this.attendantService.add(attendant).subscribe(
-      this.handleSuccessfullResponse()
+      this.handleSuccessfullResponse(),
+      this.handleFailedResponse()
     );    
   }
 
   handleSuccessfullResponse() {
 
     return () => {
-      this.eventManagementFormComponent.handleFormSuccessfulSubmit();
+      this.eventManagementFormComponent.handleSuccessfulFormSubmit();
+    };
+  }
+
+  handleFailedResponse() {
+
+    return () => {
+      this.eventManagementFormComponent.handleUnsuccessfulFormSubmit();
     };
   }
 

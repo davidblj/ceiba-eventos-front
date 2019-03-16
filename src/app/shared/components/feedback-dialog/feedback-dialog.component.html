@@ -1,0 +1,46 @@
+
+<div mat-dialog-content class="feedback-dialog-content">  
+
+  <ng-template [ngIf]="responseSucceed" [ngIfElse]="failure">
+    
+    <div class="feedback-dialog-content--display-flex">      
+
+      <div class = "feedback-dialog-content__icon">
+        <img src="{{data.iconSource}}">
+      </div>
+      
+      <h3 class="feedback-dialog-content__message mat-subheading-2">
+        {{data.message}}
+      </h3>            
+      
+      <button mat-stroked-button color="primary" class="feedback-dialog-content__button"
+              *ngIf="shouldDisplaySuccessButtonMessage()">
+        {{data.successButtonMessage}}
+      </button>
+
+      <button mat-stroked-button color="primary" class="feedback-dialog-content__button"
+              *ngIf="shouldDisplayDismissButtonMessage()">
+        {{data.dismissButtonMessage}}
+      </button>
+
+    </div>
+    
+  </ng-template>  
+  
+  <ng-template #failure>
+
+      <div class="feedback-dialog-content--display-flex">
+
+        <div class = "feedback-dialog-content__icon">
+          <img src="{{data.iconSource}}">
+        </div>
+    
+        <h3 class="feedback-dialog-content__message mat-subheading-2">
+          {{data.message}}
+        </h3>
+
+      </div>
+      
+  </ng-template>
+
+</div>

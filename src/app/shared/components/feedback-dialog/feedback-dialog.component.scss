@@ -12,8 +12,16 @@
     &__message {           
         
         text-align: center;
+        padding-top: 10px;
         &:not(:last-child) {
             margin: 10px 0 30px
         };        
+    }
+
+    &__icon {
+
+        img {
+            height: 70px;
+        }        
     }
 }
