@@ -1,0 +1,16 @@
+
+<div class="resources">
+  
+  <div class="resources__header mat-subheading-2">
+    Recursos
+  </div>
+
+  <div class="resources__items">
+    <div *ngFor="let resource of resources">
+      <app-event-summary-resource-item
+        [resource]=resource>      
+      </app-event-summary-resource-item>
+    </div>
+  </div>
+
+</div>

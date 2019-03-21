@@ -21,6 +21,17 @@ $secondary-light-2: mat-color($app-accent, 300);
 $accent: mat-color($app-accent);
 $warn: mat-color($app-warn);
 
+// black scale
+
+$black-1: #4B4A55;
+
+// gray scale
+
+$gray-1: #ebebec;     
+$gray-2: rgba(black, 0.035);
+
+// miscelaneous
+
 $linear-icon-color: #272932;
 $linear-divider-color: rgba(black, 0.2);
 $main-color-gradient: linear-gradient(162deg, rgba(57,73,171,1) 45%, rgba(236,64,122,1) 100%);

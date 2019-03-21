@@ -1,0 +1,25 @@
+@import "~src/scss/theme-colors.scss";
+@import "~src/scss/typhography.scss";
+
+.resource {
+
+    background: $gray-2;        
+    width: 250px;
+    padding: 25px 15px;
+    margin-right: 20px;
+    border-radius: 7px;
+    box-shadow: 4px 4px 15px $gray-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__name {
+        
+        font-size: 17px;
+    }
+
+    &__capacity {
+        font-size: $numeric-body-2-font-size;
+        font-family: $numeric-font-family;
+    }
+}

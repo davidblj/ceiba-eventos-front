@@ -1,0 +1,14 @@
+@import "~src/scss/theme-colors.scss";
+
+.general-details {
+
+    &--display-flex {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: $gray-2;
+        color: $black-1;        
+    }    
+}

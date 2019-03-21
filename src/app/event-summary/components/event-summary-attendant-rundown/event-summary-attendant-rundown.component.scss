@@ -1,0 +1,25 @@
+@import "~src/scss/theme-colors.scss";
+@import "~src/scss/typhography.scss";
+
+.attendant-rundown {
+
+    &--display-flex {        
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;        
+    }
+
+    &__image {
+        height: 55px;
+    }
+
+    &__numeric-counter {        
+        font-size: 100px;
+        font-family: $numeric-font-family;
+        background: $main-color-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

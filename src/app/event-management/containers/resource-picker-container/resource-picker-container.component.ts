@@ -24,6 +24,7 @@ export class ResourcePickerContainerComponent implements OnInit {
   assignedResourcesControl: FormArray;
 
   eventId: number;
+  favoriteResourceId: number;
   eventResources$: Observable<EventResources>;
   quantities: LocalResourceQuantity[];
 
@@ -50,10 +51,34 @@ export class ResourcePickerContainerComponent implements OnInit {
 
     this.eventResources$.subscribe(eventResources => {
       
+      this.favoriteResourceId = this.getFavoriteResourceId(eventResources.favoriteResource, 
+                                                           eventResources.resources);
       this.quantities = eventResources.resources.map(resource => {
         return this.newLocalQuantityFor(resource);
       });
     });        
+  }
+
+  getFavoriteResourceId(favoriteResourceName: String, resources: Resource[]) {
+
+    return resources.find(resource => favoriteResourceName === resource.name).id;
+  }
+
+  newLocalQuantityFor(resource: Resource): LocalResourceQuantity {
+
+    return {resourceId: resource.id,
+            realQuantity: this.getDefaultQuantity(resource.id), 
+            localQuantity: this.getDefaultQuantity(resource.id),
+            availableQuantity: resource.stock - resource.quantity};
+  }
+
+  getDefaultQuantity(resourceId: number): number {
+    return resourceId === this.favoriteResourceId ? 1 : 0;
+  }
+
+  reserveFavoriteResource() {
+
+    // TODO: call service.
   }
 
   resetQuantitiesArray() {
@@ -61,19 +86,11 @@ export class ResourcePickerContainerComponent implements OnInit {
     this.quantities = this.quantities.map(quantity => {
       return {
         resourceId: quantity.resourceId,
-        realQuantity: 0,
-        localQuantity: 0,
+        realQuantity: this.getDefaultQuantity(quantity.resourceId),
+        localQuantity: this.getDefaultQuantity(quantity.resourceId),
         availableQuantity: quantity.availableQuantity
       };
     });
-  }
-
-  newLocalQuantityFor(resource: Resource): LocalResourceQuantity {
-
-    return {resourceId: resource.id,
-            realQuantity: 0, 
-            localQuantity: 0,
-            availableQuantity: resource.stock - resource.quantity};
   }
 
   onAmountChangedHandler(resourceQuantity: ResourceQuantity) {    

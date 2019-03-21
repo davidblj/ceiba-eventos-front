@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: './event-management/event-management.module#EventManagementModule'
   },
   {
+    path: 'eventos/:id/detalles',
+    loadChildren: './event-summary/event-summary.module#EventSummaryModule'
+  },
+  {
     path: '',
     redirectTo: 'eventos/agregar',
     pathMatch: 'full'
