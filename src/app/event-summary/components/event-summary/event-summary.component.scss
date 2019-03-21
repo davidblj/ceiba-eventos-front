@@ -1,0 +1,12 @@
+@import "~src/scss/theme-colors.scss";
+
+.event-summary {
+
+    & > * {
+        z-index: 100;        
+    }
+
+    &__details {
+
+    }
+}
