@@ -1,0 +1,12 @@
+
+<div class="attendants">  
+
+  <div class="attendants__items">
+    <div *ngFor="let attendant of attendants">      
+      <app-event-summary-attendant-item
+        [attendant]="attendant">      
+      </app-event-summary-attendant-item>
+    </div>    
+  </div>
+
+</div>

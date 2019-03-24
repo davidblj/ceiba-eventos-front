@@ -1,13 +1,7 @@
-@import "~src/scss/theme-colors.scss";
 
 .details {
 
-    background-color: $primary;
-    padding: 35px 35px 0;
-
-    &__card {
-                
-        background: white;
-        border-radius: 7px;
+    &__specific-rundown {
+        padding: 0px 0px 15px 35px;
     }
 }

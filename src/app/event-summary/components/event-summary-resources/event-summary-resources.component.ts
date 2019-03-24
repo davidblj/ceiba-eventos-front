@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventSummaryResourcesComponent implements OnInit {
 
-  resources = [{name: "Beers", amount: 50, used: 24}, {name: "Pistachios", amount: 20, used: 14}];
+  resources = [
+    {
+      name: "Beers", 
+      amount: 50, 
+      used: 24
+    }, 
+    {
+      name: "Pistachios", 
+      amount: 20, 
+      used: 14
+    }
+  ];
 
   constructor() { }
 

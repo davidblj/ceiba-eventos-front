@@ -1,0 +1,22 @@
+@import '~src/scss/theme-colors';
+
+.details {
+
+    margin-left: 15px;
+    margin-right: 12px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 7px;
+    background: $primary-light-3;    
+    overflow: hidden;   
+
+    &__resources {
+
+        padding: 20px 20px 0 20px;
+    }
+
+    &__organizer-details {
+
+        // background-color: $primary-light-2;    
+        border-top: solid 1px $primary-light-2;
+    }
+}

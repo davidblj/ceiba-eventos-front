@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventSummaryDetailsComponent implements OnInit {
 
+  resourcesSectionName = 'Recursos';
+  attendantsSectionName = 'Participantes';
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

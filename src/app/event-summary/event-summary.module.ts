@@ -8,6 +8,12 @@ import { MaterialModule } from '../material/material.module';
 import { EventSummaryResourcesComponent } from './components/event-summary-resources/event-summary-resources.component';
 import { EventSummaryResourceItemComponent } from './components/event-summary-resource-item/event-summary-resource-item.component';
 import { EventSummaryDetailsComponent } from './components/event-summary-details/event-summary-details.component';
+import { EventSummaryAttendantsComponent } from './components/event-summary-attendants/event-summary-attendants.component';
+import { EventSummaryAttendantItemComponent } from './components/event-summary-attendant-item/event-summary-attendant-item.component';
+import { EventSummaryAttendantResourceComponent } from './components/event-summary-attendant-resource/event-summary-attendant-resource.component';
+import { EventSummaryAttendantOrganizerDetailsComponent } from './components/event-summary-attendant-organizer-details/event-summary-attendant-organizer-details.component';
+import { EventSummaryAttendantDetailsComponent } from './components/event-summary-attendant-details/event-summary-attendant-details.component';
+import { EventSummaryAttendantSectionComponent } from './components/event-summary-attendant-section/event-summary-attendant-section.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { EventSummaryDetailsComponent } from './components/event-summary-details
     EventSummaryAttendantRundownComponent, 
     EventSummaryResourcesComponent,
      EventSummaryResourceItemComponent,
-     EventSummaryDetailsComponent
+     EventSummaryDetailsComponent,
+     EventSummaryAttendantsComponent,
+     EventSummaryAttendantItemComponent,
+     EventSummaryAttendantResourceComponent,
+     EventSummaryAttendantOrganizerDetailsComponent,
+     EventSummaryAttendantDetailsComponent,
+     EventSummaryAttendantSectionComponent
   ],
   imports: [
     CommonModule,

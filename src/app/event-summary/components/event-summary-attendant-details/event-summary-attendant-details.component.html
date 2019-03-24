@@ -1,0 +1,20 @@
+
+<div class="details">
+  
+  <div class="details__resources">
+    
+    <div *ngFor="let resource of attendant.resources">
+      <app-event-summary-attendant-resource 
+        [resource]="resource">
+      </app-event-summary-attendant-resource>
+    </div>    
+
+  </div>
+
+  <div class="details__organizer-details">
+    <app-event-summary-attendant-organizer-details 
+      [details]="organizerDetails">
+    </app-event-summary-attendant-organizer-details>
+  </div>
+  
+</div>

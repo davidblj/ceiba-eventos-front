@@ -1,0 +1,30 @@
+        
+<div class="attendant">
+
+  <div class="attendant__display-card-container"
+       (click)="toggleDetails()">
+
+    <div class="attendant__left-content">
+      <div class="attendant__name mat-body">
+        {{attendant.name}}
+      </div>
+
+      <div class="attendant__date mat-body">
+        {{attendant.date}}
+      </div>
+    </div>
+
+    <div class="attendant__right-content">
+      <mat-icon color="accent">chevron_right</mat-icon>
+    </div>
+
+  </div>
+
+  <div class="attendant_details" 
+       *ngIf="shouldHideDetails">
+    <app-event-summary-attendant-details
+      [attendant]="attendant">         
+    </app-event-summary-attendant-details>
+  </div>
+
+</div>

@@ -1,20 +1,13 @@
 @import "~src/scss/theme-colors.scss";
 
-.resources {
-
-    padding: 0px 0px 15px 35px;
-
-    &__header {
-
-        color: $black-1;
-    }
+.resources {    
 
     &__items {
 
         display: flex;
-        overflow: scroll;
-        padding: 15px 7px;
-        scrollbar-width: none;             
+        overflow: scroll;        
+        scrollbar-width: none;  
+        padding-bottom: 11px;           
 
         &::-webkit-scrollbar {
 

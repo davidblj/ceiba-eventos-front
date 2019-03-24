@@ -1,0 +1,14 @@
+@import "~src/scss/theme-colors.scss";
+
+.attendant-section {
+
+    margin-bottom: 15px;        
+
+    &__header {
+        color: $black-1;
+    }
+
+    &__content {
+        padding-left: 15px;
+    }
+}
