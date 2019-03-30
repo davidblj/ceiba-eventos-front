@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AssignedResource } from '../../shared/assigned-resource.interface';
 
 @Component({
   selector: 'app-event-summary-attendant-resource',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventSummaryAttendantResourceComponent implements OnInit {
 
   @Input()
-  resource: any;
+  resource: AssignedResource;
 
   constructor() { }
 

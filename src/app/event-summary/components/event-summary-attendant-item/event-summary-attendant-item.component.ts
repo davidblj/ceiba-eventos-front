@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Attendant } from '../../shared/attendant.interface';
 
 @Component({
   selector: 'app-event-summary-attendant-item',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventSummaryAttendantItemComponent implements OnInit {
 
   @Input()
-  attendant: any;
+  attendant: Attendant;
 
   shouldHideDetails = false;
 

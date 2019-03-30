@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './event-summary-attendant-section.component.html',
   styleUrls: ['./event-summary-attendant-section.component.scss']
 })
-export class EventSummaryAttendantSectionComponent implements OnInit {
+export class EventSummaryAttendantSectionComponent implements OnInit {  
 
   @Input()
   sectionName: String;

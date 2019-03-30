@@ -1,7 +1,8 @@
 
 <div class="details">
   
-  <app-event-summary-attendant-rundown>
+  <app-event-summary-attendant-rundown
+    [eventSummary]="eventSummary">
   </app-event-summary-attendant-rundown>
 
   <div class="details__specific-rundown">
@@ -9,7 +10,8 @@
     <app-event-summary-attendant-section
       [sectionName]="resourcesSectionName"> 
 
-      <app-event-summary-resources>
+      <app-event-summary-resources
+        [resources]="resources">
       </app-event-summary-resources>     
 
     </app-event-summary-attendant-section>
@@ -17,7 +19,8 @@
     <app-event-summary-attendant-section
       [sectionName]="attendantsSectionName">
 
-      <app-event-summary-attendants>
+      <app-event-summary-attendants
+        [attendants]="attendants">
       </app-event-summary-attendants>
 
     </app-event-summary-attendant-section>    

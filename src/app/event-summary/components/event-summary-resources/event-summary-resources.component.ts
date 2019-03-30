@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Resource } from '../../shared/resource.interface';
 
 @Component({
   selector: 'app-event-summary-resources',
@@ -7,22 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventSummaryResourcesComponent implements OnInit {
 
-  resources = [
-    {
-      name: "Beers", 
-      amount: 50, 
-      used: 24
-    }, 
-    {
-      name: "Pistachios", 
-      amount: 20, 
-      used: 14
-    }
-  ];
-
+  @Input()
+  resources: Resource[];
+  
   constructor() { }
 
   ngOnInit() {
   }
-
 }

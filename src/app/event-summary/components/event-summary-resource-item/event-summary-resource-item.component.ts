@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Resource } from '../../shared/resource.interface';
 
 @Component({
   selector: 'app-event-summary-resource-item',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventSummaryResourceItemComponent implements OnInit {
 
   @Input()
-  resource: any;
+  resource: Resource;
 
   constructor() { }
 

@@ -9,9 +9,9 @@ import { Event } from 'src/app/shared/interfaces/event.interface';
 })
 export class EventService {
 
+  // TODO: this services are not global services, and hence, they should not be on this module
   constructor(private http: HttpClient) {}
 
-  // TODO: this service should be on its own component
   add(event: Event): Observable<any> {
     return this.http.post('events', event);
   }

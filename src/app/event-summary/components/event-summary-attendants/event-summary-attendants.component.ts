@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Attendant } from '../../shared/attendant.interface';
 
 @Component({
   selector: 'app-event-summary-attendants',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventSummaryAttendantsComponent implements OnInit {
 
-  attendants = [
+  @Input()
+  attendants: Attendant[];
+
+  /* attendants = [
     {
       name: "David Jaramillo", 
       date: '24-06, 03:59', 
@@ -40,11 +44,11 @@ export class EventSummaryAttendantsComponent implements OnInit {
       organizer: 'Laura Bollago',
       location: 'Personal Soft'
     }
-  ];
+  ]; */  
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
+
