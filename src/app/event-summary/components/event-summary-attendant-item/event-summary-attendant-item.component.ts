@@ -21,5 +21,24 @@ export class EventSummaryAttendantItemComponent implements OnInit {
   toggleDetails() {
     this.shouldHideDetails = !this.shouldHideDetails;
   }
+
+  get day() {
+    return new Date(this.date).getDate();
+  }
+
+  get month() {
+    return new Date(this.date).getMonth() + 1;
+  }
+
+  get hours() {
+    return new Date(this.date).getHours();
+  }
+
+  get minutes() {
+    return new Date(this.date).getMinutes();
+  }
   
+  get date() {
+    return this.attendant.insertionDate;
+  }
 }

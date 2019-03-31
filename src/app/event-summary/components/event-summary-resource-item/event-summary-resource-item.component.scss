@@ -13,14 +13,18 @@
     justify-content: space-between;
     align-items: center;
 
-    &__name {
-        
-        font-size: 17px;    
+    &__shared-amount {
+
+        font-size: 15px;
+        color: $black-1;
     }
 
-    &__capacity {
+    &__of {
+        font-size: 15px;
+        color: $black-1;  
+    }
 
-        font-size: $numeric-body-2-font-size;
-        font-family: $numeric-font-family;
+    &__available-stock {
+        font-size: 23px;
     }
 }

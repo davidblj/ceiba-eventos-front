@@ -53,6 +53,7 @@ export class ResourcePickerContainerComponent implements OnInit {
       
       this.favoriteResourceId = this.getFavoriteResourceId(eventResources.favoriteResource, 
                                                            eventResources.resources);
+
       this.quantities = eventResources.resources.map(resource => {
         return this.newLocalQuantityFor(resource);
       });
@@ -61,7 +62,9 @@ export class ResourcePickerContainerComponent implements OnInit {
 
   getFavoriteResourceId(favoriteResourceName: String, resources: Resource[]) {
 
-    return resources.find(resource => favoriteResourceName === resource.name).id;
+    return favoriteResourceName ? 
+           resources.find(resource => favoriteResourceName === resource.name).id : 
+           0;
   }
 
   newLocalQuantityFor(resource: Resource): LocalResourceQuantity {

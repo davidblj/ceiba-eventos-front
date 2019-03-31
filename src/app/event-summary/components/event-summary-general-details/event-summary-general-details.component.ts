@@ -16,4 +16,17 @@ export class EventSummaryGeneralDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  get day() {
+
+    return new Date(this.date).getDate();
+  }
+
+  get month() {
+    return new Date(this.date).getMonth() + 1;
+  }
+
+  get date() {
+    return this.eventSummary.insertionDate;
+  }
+
 }

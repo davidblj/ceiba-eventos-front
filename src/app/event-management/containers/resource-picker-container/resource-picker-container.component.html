@@ -1,5 +1,5 @@
 
-<div *ngIf="eventResources$ | async as eventResources">
+<div *ngIf="(eventResources$ | async) as eventResources">
     <app-event-management-resource-picker
         [resources]="eventResources.resources"
         [quantities]="quantities"
@@ -7,4 +7,4 @@
         (onAmountChanged)="onAmountChangedHandler($event)">  
     </app-event-management-resource-picker>
 </div>
-    
+            

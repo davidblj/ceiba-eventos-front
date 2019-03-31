@@ -1,8 +1,10 @@
 
-<app-event-summary-general-details
-    [eventSummary]="eventSummary">  
-</app-event-summary-general-details>  
+<div *ngIf="(eventSummary$ | async) as eventSummary">
+    <app-event-summary-general-details
+        [eventSummary]="eventSummary">  
+    </app-event-summary-general-details>  
 
-<app-event-summary-details
-    [eventSummary]="eventSummary">    
-</app-event-summary-details>
+    <app-event-summary-details
+        [eventSummary]="eventSummary">    
+    </app-event-summary-details>
+</div>

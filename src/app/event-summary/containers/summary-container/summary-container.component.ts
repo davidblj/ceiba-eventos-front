@@ -3,6 +3,7 @@ import { EventService } from '../../shared/service/event.service';
 import { EventSummary } from '../../shared/event-summary.interface';
 import { ActivatedRoute } from '@angular/router';
 import { flatMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-summary-container',
@@ -11,7 +12,7 @@ import { flatMap } from 'rxjs/operators';
 })
 export class SummaryContainerComponent implements OnInit {
 
-  eventSummary: EventSummary;
+  eventSummary$: Observable<EventSummary>;
 
   constructor(private eventService: EventService, private route: ActivatedRoute) { }
 
@@ -28,10 +29,7 @@ export class SummaryContainerComponent implements OnInit {
     });
   }
 
-  getEventSummary(id: number) {
-    
-    this.eventService.getSummaryFrom(id).subscribe(result => {
-      this.eventSummary = result;
-    });
+  getEventSummary(id: number) {    
+    this.eventSummary$ = this.eventService.getSummaryFrom(id);
   }  
 }

@@ -17,9 +17,9 @@
         </button>
     </div>
 
-    <div class="picker__amount-bar"></div>
-    
-    <div class="picker__resources">
+    <div class="picker__amount-bar"></div>    
+
+    <div class="picker__resources" *ngIf="quantities">
         <div *ngFor="let resource of resources" class="picker__resource">
             <app-event-management-resource-item
                 [resource]="resource"

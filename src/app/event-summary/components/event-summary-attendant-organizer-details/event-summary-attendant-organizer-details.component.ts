@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { OrganizerDetails } from '../../shared/organizer-details.interface';
 
 @Component({
   selector: 'app-event-summary-attendant-organizer-details',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventSummaryAttendantOrganizerDetailsComponent implements OnInit {
 
   @Input()
-  details: any;
+  details: OrganizerDetails;
 
   constructor() { }
 

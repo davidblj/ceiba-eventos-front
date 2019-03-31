@@ -20,17 +20,11 @@ export class EventSummaryAttendantDetailsComponent implements OnInit {
     return this.attendant.assignedResources;    
   }
 
-  // todo: the organizer details should be provided by the attendants object itself 
   get organizerDetails() {
-    
-    // return {
-    //   organizer: this.attendant.organizer,
-    //   location: this.attendant.location
-    // };
-
+      
     return {
       organizer: "Laura Bollago",
-      location: "Personal Soft"
+      location: this.attendant.location
     };
   }
 }

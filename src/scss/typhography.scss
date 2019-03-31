@@ -17,11 +17,9 @@ $title-font-family: mat-font-family($title-typography-config);
 $numeric-typography-config: mat-typography-config(
   $font-family: 'Major Mono Display, cursive', 
   $title: mat-typography-level(40px, 25px, 400),
-  $body-1: mat-typography-level(35px, 15px, 400),
-  $body-2: mat-typography-level(20px, 15px, 400)  
+  $body-1: mat-typography-level(35px, 15px, 400), 
 );
 
 $numeric-title-font-size: mat-font-size($numeric-typography-config, title);
 $numeric-body-font-size: mat-font-size($numeric-typography-config, body-1);
-$numeric-body-2-font-size: mat-font-size($numeric-typography-config, body-2);
 $numeric-font-family: mat-font-family($numeric-typography-config);

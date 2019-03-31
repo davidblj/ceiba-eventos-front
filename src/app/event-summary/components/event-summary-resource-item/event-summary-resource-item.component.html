@@ -6,7 +6,12 @@
   </div>
 
   <div class="resource__capacity mat-body">
-    {{resource.quantity}}/{{resource.stock}}
+        
+    <span class="resource__shared-amount">{{resource.quantity}}</span>
+    
+    <span class="resource__of"> de </span>
+
+    <span class="resource__available-stock">{{resource.stock}}</span>
   </div>
 
 </div>

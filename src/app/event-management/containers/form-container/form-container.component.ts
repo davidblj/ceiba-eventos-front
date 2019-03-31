@@ -32,13 +32,18 @@ export class FormContainerComponent implements OnInit {
   }
 
   onAddNewLocationHandler(locationName: string) {
+
     this.locationIsSet = true;
-    this.addEventLocation({ name: locationName, 'event_id': Number(this.eventId) });
+    const location = { name: locationName, 'event_id': Number(this.eventId) };
+    this.location = location;
+    
+    this.addEventLocation(location);
   }
 
   onAddNewAttendantHandler(attendant: Attendant) {
     
     attendant.event_id = this.eventId;
+    attendant.location = this.location.name;
     this.attendantService.add(attendant).subscribe(
       this.handleSuccessfullResponse(),
       this.handleFailedResponse()
@@ -69,6 +74,7 @@ export class FormContainerComponent implements OnInit {
   }
 
   getLocations() {
+    
     this.locationService.get().subscribe(locations => {
       this.locations = locations;
     });

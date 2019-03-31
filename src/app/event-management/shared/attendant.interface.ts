@@ -8,6 +8,7 @@ interface AssignedResource {
 export interface Attendant {
 
     event_id?: number;
+    location: String;
     employee_id: String;
     assigned_resources: AssignedResource[];
 }
