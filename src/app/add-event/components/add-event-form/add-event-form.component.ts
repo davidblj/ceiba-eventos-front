@@ -41,7 +41,7 @@ export class AddEventFormComponent implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(24)
       ]],
-      description: ['', [
+      description: [null, [
         Validators.minLength(10),
         Validators.maxLength(150)
       ]],

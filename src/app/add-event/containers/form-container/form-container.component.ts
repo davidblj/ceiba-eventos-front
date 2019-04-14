@@ -22,13 +22,29 @@ export class FormContainerComponent implements OnInit {
 
   onAddNewEventHandler(event: Event) {
 
-    // TODO: this dialogs should be open by the presentational components (?)
+    event = this.sanitize(event);
     console.log(event);
+
     this.loading = true;
     this.eventService.add(event).subscribe(
       this.handleSuccessfullResponse(),
       this.handleFailedResponse()
     );
+  }
+
+  sanitize(event: Event) {
+
+    event.resources = event.resources.map( ({name, description, price, amount}) => ({            
+        name, description, price: Number(price), amount: Number(amount)
+      })
+    );
+    
+    event.inputs = event.inputs.map( ({name, description, price}) => ({            
+        name, description, price: Number(price)
+      })
+    );
+
+    return event;
   }
 
   handleSuccessfullResponse() {
