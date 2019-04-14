@@ -1,0 +1,34 @@
+@import '~src/scss/theme-colors';
+
+$box-length: 500px;
+
+.presentation {
+
+    height: 100vh;  
+    // position: relative;  
+    // overflow: hidden;
+
+    &__icon-box {
+
+        position: absolute;        
+        right: -210px;
+        top: 20vh;
+        transform: translateY(-50%) rotate(45deg);
+        background-color: #EEEEF2;
+        height: $box-length;
+        width: $box-length;
+        border-radius: 20px;
+        content: "";
+    }
+
+    &__icon {  
+        
+        position: absolute;
+        top: 30px;
+        right: 20px;
+
+        img {
+            height: 160px;
+        }
+    }
+}

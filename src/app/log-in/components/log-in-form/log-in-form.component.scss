@@ -1,0 +1,66 @@
+
+$icon-box-length: 500px;
+$fields-box-length: 350px;
+
+.form {
+    
+    height: 100vh;  
+    position: relative;  
+    overflow: hidden;
+
+    &__icon-box {
+
+        position: absolute;        
+        right: -210px;
+        top: 20vh;
+        transform: translateY(-50%) rotate(45deg);
+        background-color: #EEEEF2;
+        height: $icon-box-length;
+        width: $icon-box-length;
+        border-radius: 20px;
+        content: "";
+    }
+
+    &__icon {  
+        
+        position: absolute;
+        top: 30px;
+        right: 20px;
+
+        img {
+            height: 160px;
+        }
+    }
+
+    &__fields-box {
+                        
+        position: absolute;
+        top: 550px;
+        left: -150px;
+        transform: translateY(-50%) rotate(45deg);
+        background-color: #EEEEF2;
+        height: $fields-box-length;
+        width: 400px;
+        border-radius: 20px;
+        content: "";
+    }
+
+    &__fields {
+        
+        position: absolute;
+        top: 490px;        
+        padding-left: 15px;
+
+        & > * {
+            display: block;
+        }
+    }
+
+    &__footer {
+
+        position: absolute;
+        top: -15px;
+        right: -12px;
+        transform: rotate(-45deg);
+    }
+}

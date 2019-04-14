@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren: './log-in/log-in.module#LogInModule'
+  },
+  {
     path: 'eventos/agregar',
     loadChildren: './add-event/add-event.module#AddEventModule'
   },
@@ -16,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'eventos/agregar',
+    redirectTo: 'eventos/login',
     pathMatch: 'full'
   }
 ];
