@@ -6,10 +6,12 @@
 
 $title-typography-config: mat-typography-config(
   $font-family: 'Lobster, cursive', 
+  $headline: mat-typography-level(38px, 25px, 400),
   $title: mat-typography-level(25px, 25px, 400)  
 );
 
 $title-font-size: mat-font-size($title-typography-config, title);
+$title-headline-font-size: mat-font-size($title-typography-config, headline);
 $title-font-family: mat-font-family($title-typography-config);
 
 // a pretty number typhography

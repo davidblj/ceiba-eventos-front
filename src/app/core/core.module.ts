@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { interceptorProviders } from './interceptors/interceptor-providers';
 import { EventService } from './services/event.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LogInService } from './services/log-in.service';
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     interceptorProviders,
-    EventService
+    EventService,
+    LogInService
   ]
 })
 export class CoreModule { }

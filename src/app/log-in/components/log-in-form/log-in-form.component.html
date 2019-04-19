@@ -1,33 +1,32 @@
 
 <div class="form">
 
-  <div class="form__icon-box"></div>
+  <div class="form__icon-box mat-elevation-z8 "></div>
   
   <div class="form__icon">
     <img src="assets/icons/bag.svg">
   </div>
 
-  <div class="form__fields-box">
-    
-    <div class="form__footer">
-      <button mat-fab color="primary">
-        <mat-icon>arrow_right_alt</mat-icon>
-      </button>
-    </div>
+  <div class="form__fields-box mat-elevation-z8"></div>  
 
-  </div>  
+  <div class="form__fields">
 
-  <form class="form__fields">
+    <div class="form__info mat-subheading-2">Inicia sesión</div>
 
-    <!-- todo: make it a component -->
-    <mat-form-field appearance="legacy">
-      <input matInput placeholder="Usuario">        
-    </mat-form-field>            
+    <app-log-in-form-field
+      [formInput]="formConfig.user">      
+    </app-log-in-form-field>
 
-    <mat-form-field appearance="legacy">
-      <input matInput placeholder="Contraseña" type="password">      
-    </mat-form-field>    
+    <app-log-in-form-field
+      [formInput]="formConfig.password">      
+    </app-log-in-form-field>    
 
-  </form>
+  </div>
+
+  <div class="form__footer">
+    <app-log-in-submit
+      (onSubmit)="onSubmitHandler()">      
+    </app-log-in-submit>
+  <div>    
 
 </div>

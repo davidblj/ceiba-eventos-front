@@ -1,7 +1,27 @@
+@import "~src/scss/theme-colors.scss";
 
 .custom-snackbar-container {
+
+    text-align: center;    
     
     &--position-top {
         margin-top: 25px !important;
+    }
+
+    &--status-success {
+
+        background-color: $gray-1;
+        color: $black-1;
+        border-left-style: solid;
+        border-left-color: $black-1;
+        border-left-width: 10px;
+    }
+
+    &--status-warning {
+        background-color: $gray-1;
+        color: $black-1;
+        border-left-style: solid;
+        border-left-color: $warn;
+        border-left-width: 10px;
     }
 }

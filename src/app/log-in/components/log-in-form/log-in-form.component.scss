@@ -1,3 +1,4 @@
+@import "~src/scss/theme-colors.scss";
 
 $icon-box-length: 500px;
 $fields-box-length: 350px;
@@ -17,7 +18,7 @@ $fields-box-length: 350px;
         background-color: #EEEEF2;
         height: $icon-box-length;
         width: $icon-box-length;
-        border-radius: 20px;
+        border-radius: 70px;
         content: "";
     }
 
@@ -35,20 +36,25 @@ $fields-box-length: 350px;
     &__fields-box {
                         
         position: absolute;
-        top: 550px;
+        top: 500px;
         left: -150px;
         transform: translateY(-50%) rotate(45deg);
         background-color: #EEEEF2;
         height: $fields-box-length;
         width: 400px;
-        border-radius: 20px;
-        content: "";
+        border-radius: 50px;        
+    }
+
+    &__info {
+
+        color: $primary;
+        margin-bottom: 10px;
     }
 
     &__fields {
         
         position: absolute;
-        top: 490px;        
+        top: 420px;        
         padding-left: 15px;
 
         & > * {
@@ -58,9 +64,8 @@ $fields-box-length: 350px;
 
     &__footer {
 
-        position: absolute;
-        top: -15px;
-        right: -12px;
-        transform: rotate(-45deg);
-    }
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+    }    
 }
