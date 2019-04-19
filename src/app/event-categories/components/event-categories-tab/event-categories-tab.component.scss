@@ -1,0 +1,19 @@
+@import "~src/scss/typhography.scss";
+
+.tab {
+
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    &--subheading {
+        padding-left: 22px;
+        transform: translateY(12px);
+    }   
+    
+    &--heading {
+
+        font-size: $title-headline-font-size;
+        font-family: $title-font-family;
+    }
+}       

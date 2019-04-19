@@ -1,0 +1,24 @@
+@import "~src/scss/theme-colors.scss";
+@import "~src/scss/typhography.scss";
+
+.navigation {
+
+    &__tab-header {
+        
+        position: relative;        
+    }    
+
+    &__new-event-action-button { 
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-left: 50px;
+        transform: translateY(50%);
+    }
+    
+    &__icon {
+
+        height: 20px;
+    }    
+}

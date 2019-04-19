@@ -1,0 +1,27 @@
+
+<div class="navigation">
+
+  <div class="navigation__tab-header ">
+
+    <app-event-categories-tabs
+      (onTabClick)="onTabClickHandler($event)">      
+    </app-event-categories-tabs>
+
+    <div class="navigation__new-event-action-button">
+      <button mat-fab
+              (click)="onNewEventButtonClick()">
+        <img class="navigation__icon" src="assets/icons/add.svg" alt="">
+      </button>
+    </div>
+
+  </div>  
+
+  <div class="navigation__content">
+
+    <app-list-container
+      [currentTab]="currentTab">      
+    </app-list-container>    
+
+  </div>
+  
+</div>

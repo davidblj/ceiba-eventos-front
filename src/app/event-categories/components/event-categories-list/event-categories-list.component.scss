@@ -1,0 +1,13 @@
+@import "~src/scss/theme-colors.scss";
+
+.events {
+
+    padding: 65px 30px 10px;
+
+    &__warning-message {
+
+        margin-top: 50px;
+        padding: 0 10px;
+        color: $black-1;
+    }
+}

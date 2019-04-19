@@ -1,0 +1,20 @@
+
+<div class="card" >
+  <div class="card__title mat-body">
+    {{event.name}}
+  </div>
+  <div class="card__details">
+    
+    <ng-container *ngIf="eventIsInManagementMode(); else displayChartIcon">
+      <mat-icon
+        (click)="onDetailsClick()">notes
+      </mat-icon>
+    </ng-container>
+
+    <ng-template #displayChartIcon>
+      <!-- todo: statistics re-route -->
+      <mat-icon>show_chart</mat-icon>  
+    </ng-template>    
+
+  </div>
+</div>

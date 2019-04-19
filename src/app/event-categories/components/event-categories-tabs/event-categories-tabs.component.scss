@@ -1,0 +1,36 @@
+@import "~src/scss/theme-colors.scss";
+
+.tabs {
+
+    position: relative;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;    
+    background-color: $primary;        
+    color: white;   
+    height: 175px;     
+
+    &__tab-name {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+        height: 175px;
+    }
+
+    &__switch-action-button {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 175px;
+        padding: 0 35px;
+        background: $primary-light-2;
+    }
+
+    &__arrow-forward {
+
+        transform: scale(1.5);    
+    }
+}

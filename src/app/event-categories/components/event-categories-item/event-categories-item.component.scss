@@ -1,0 +1,30 @@
+@import '~src/scss/theme-colors';
+
+$border-radius: 8px;
+
+.card {
+
+    border-radius: 7px;    
+    background: $gray-1;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;    
+
+    &__title {
+
+        padding: 20px;
+        color: $black-1;
+    }
+
+    &__details {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: $primary-light-2;
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;        
+        padding: 0 12px;
+        color: white;
+    }
+}

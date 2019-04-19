@@ -1,0 +1,22 @@
+
+<div class="tabs">
+
+  <div class="tabs__tab-name">
+
+    <app-event-categories-tab 
+      [name]="currentTabName">
+    </app-event-categories-tab>
+  
+  </div>
+  
+  <div class="tabs__switch-action-button" 
+       matRipple
+       (click)="onClickHandler()">
+  
+    <div class="tabs__arrow-forward">
+      <mat-icon>arrow_forward</mat-icon>
+    </div>
+  
+  </div>      
+
+</div>

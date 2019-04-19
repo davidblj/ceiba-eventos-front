@@ -1,0 +1,16 @@
+
+<div class="events">
+  
+  <div class="events__event-item" *ngFor="let event of events">
+    <app-event-categories-item
+      [event]="event">      
+    </app-event-categories-item>
+  </div>
+
+  <div class="events__warning-message mat-body"
+       *ngIf="shouldDisplayWarningMessage">
+    No hay eventos. Intenta creando uno nuevo, o revisa que sí se haya finalizado al menos uno de los eventos
+    que se estaba previamente gestionando.
+  </div>
+
+</div>
