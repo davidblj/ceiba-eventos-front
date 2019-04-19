@@ -5,7 +5,6 @@ import { Attendant } from '../../shared/attendant.interface';
 import { AttendantInputContainerComponent } from '../../containers/attendant-input-container/attendant-input-container.component';
 import { ResourcePickerContainerComponent } from '../../containers/resource-picker-container/resource-picker-container.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Directionality } from '@angular/cdk/bidi';
 import { EventManagementSnackbarComponent } from '../event-management-snackbar/event-management-snackbar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalData, Status } from 'src/app/shared/interfaces/modal-data.interface';
@@ -50,7 +49,7 @@ export class EventManagementFormComponent implements OnInit {
   handleSuccessfulFormSubmit() {
 
     this.openSnackBar();
-    this.resetUiState();
+    this.resetUIState();
   }
 
   handleUnsuccessfulFormSubmit() {
@@ -71,7 +70,7 @@ export class EventManagementFormComponent implements OnInit {
     };
   }
 
-  resetUiState() {
+  resetUIState() {
 
     this.resourcePickerContainerComponent.resetQuantitiesArray();
     this.attendantInputContainerComponent.resetInput();    
@@ -94,7 +93,8 @@ export class EventManagementFormComponent implements OnInit {
       duration: 2000, 
       horizontalPosition: 'center', 
       verticalPosition: 'top',
-      panelClass: 'custom-snackbar-container--position-top'
+      panelClass: ['custom-snackbar-container--position-top', 
+                   'custom-snackbar-container--status-success']
     });  
   }
 

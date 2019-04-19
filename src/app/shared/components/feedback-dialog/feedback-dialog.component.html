@@ -14,14 +14,16 @@
       </h3>            
       
       <button mat-stroked-button color="primary" class="feedback-dialog-content__button"
-              *ngIf="shouldDisplaySuccessButtonMessage()">
+              *ngIf="shouldDisplaySuccessButtonMessage()"
+              (click)="jumpInToManagementPage()">
         {{data.successButtonMessage}}
       </button>
 
-      <button mat-stroked-button color="primary" class="feedback-dialog-content__button"
-              *ngIf="shouldDisplayDismissButtonMessage()">
-        {{data.dismissButtonMessage}}
-      </button>
+      <div *ngIf="shouldDisplayDismissButtonMessage()">
+        <button mat-stroked-button color="primary" class="feedback-dialog-content__button">
+          {{data.dismissButtonMessage}}
+        </button>
+      </div>      
 
     </div>
     

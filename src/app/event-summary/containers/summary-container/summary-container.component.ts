@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../shared/service/event.service';
 import { EventSummary } from '../../shared/event-summary.interface';
 import { ActivatedRoute } from '@angular/router';
-import { flatMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Component({

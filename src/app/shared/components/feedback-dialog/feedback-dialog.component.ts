@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalData, Status } from '../../interfaces/modal-data.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback-dialog',
@@ -9,7 +10,9 @@ import { ModalData, Status } from '../../interfaces/modal-data.interface';
 })
 export class FeedbackDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: ModalData) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: ModalData, 
+              private router: Router, 
+              private dialogReference: MatDialogRef<FeedbackDialogComponent>) { }
 
   ngOnInit() {
     console.log(this.data);
@@ -20,10 +23,16 @@ export class FeedbackDialogComponent implements OnInit {
   }  
 
   shouldDisplaySuccessButtonMessage() {
-    return this.data.successButtonMessage !== null ? true : false;
+    return this.data.successButtonMessage ? true : false;
   }
 
   shouldDisplayDismissButtonMessage() {
-    return this.data.dismissButtonMessage !== null ? true : false;
+    return this.data.dismissButtonMessage ? true : false;
+  }
+
+  jumpInToManagementPage() {
+    
+    this.dialogReference.close();
+    this.router.navigate(['/', 'eventos', 1, 'gestion']);
   }
 }

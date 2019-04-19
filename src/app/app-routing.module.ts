@@ -3,8 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: 'ingresar',
     loadChildren: './log-in/log-in.module#LogInModule'
+  },
+  {
+    path: 'eventos/categorias',
+    loadChildren: './event-categories/event-categories.module#EventCategoriesModule'
   },
   {
     path: 'eventos/agregar',
@@ -17,10 +21,10 @@ const routes: Routes = [
   {
     path: 'eventos/:id/detalles',
     loadChildren: './event-summary/event-summary.module#EventSummaryModule'
-  },
+  },  
   {
     path: '',
-    redirectTo: 'eventos/login',
+    redirectTo: 'ingresar',
     pathMatch: 'full'
   }
 ];

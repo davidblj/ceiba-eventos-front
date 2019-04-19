@@ -16,5 +16,5 @@ export interface Event {
     name: String;
     description?: String;
     resources: Resource[];
-    input?: Input[];
+    inputs?: Input[];
 }

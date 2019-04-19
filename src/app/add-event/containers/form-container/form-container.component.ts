@@ -22,8 +22,7 @@ export class FormContainerComponent implements OnInit {
 
   onAddNewEventHandler(event: Event) {
 
-    event = this.sanitize(event);
-    console.log(event);
+    this.openDialog(this.buildSuccessModalData());
 
     this.loading = true;
     this.eventService.add(event).subscribe(
@@ -83,10 +82,11 @@ export class FormContainerComponent implements OnInit {
     };
   }
 
+  // TODO: include the event id for the feedback dialog component to make redirection
   buildSuccessModalData(): ModalData {
     
     return {
-      status: Status.fail,
+      status: Status.success,
       message: "Se guardó el evento.",
       iconSource: "assets/icons/confetti.svg",
       successButtonMessage: "Gestionar"

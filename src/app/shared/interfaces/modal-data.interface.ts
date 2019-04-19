@@ -11,4 +11,5 @@ export interface ModalData {
     iconSource: String;
     successButtonMessage?: String;
     dismissButtonMessage?: String;
+    eventId?: number;
 }
