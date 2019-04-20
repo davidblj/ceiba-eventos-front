@@ -13,4 +13,8 @@ export class EventService {
   getSummaryFrom(eventId: number): Observable<EventSummary> {
     return this.http.get<EventSummary>(`events/${eventId}`);
   }
+
+  updateStatusIn(eventId: number) {
+    return this.http.put(`events/${eventId}/status`, {});
+  }
 }

@@ -1,7 +1,8 @@
 
 <div *ngIf="(eventSummary$ | async) as eventSummary">
     <app-event-summary-general-details
-        [eventSummary]="eventSummary">  
+        [eventSummary]="eventSummary"
+        (onEventArchive)="onEventArchiveHandler()">  
     </app-event-summary-general-details>  
 
     <app-event-summary-details

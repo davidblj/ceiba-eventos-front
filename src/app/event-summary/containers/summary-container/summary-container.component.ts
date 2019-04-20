@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../shared/service/event.service';
 import { EventSummary } from '../../shared/event-summary.interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,8 +12,11 @@ import { Observable } from 'rxjs';
 export class SummaryContainerComponent implements OnInit {
 
   eventSummary$: Observable<EventSummary>;
+  eventId: number;
 
-  constructor(private eventService: EventService, private route: ActivatedRoute) { }
+  constructor(private eventService: EventService, 
+              private route: ActivatedRoute, 
+              private router: Router) { }
 
   ngOnInit() {    
     this.summary();
@@ -23,12 +26,26 @@ export class SummaryContainerComponent implements OnInit {
         
     this.route.params.subscribe(params => {
 
-      const id = params['id'];
-      this.getEventSummary(id);
+      this.eventId = params['id'];
+      this.getEventSummary();
     });
   }
 
-  getEventSummary(id: number) {    
-    this.eventSummary$ = this.eventService.getSummaryFrom(id);
+  getEventSummary() {    
+    this.eventSummary$ = this.eventService.getSummaryFrom(this.eventId);
   }  
+
+  onEventArchive() {
+
+    this.eventService.updateStatusIn(this.eventId).subscribe(
+      this.handleSuccessfulResponse());
+  }
+
+  handleSuccessfulResponse() {
+
+    return () => {
+      // todo: reroute it to the statistics page
+      this.router.navigate(['eventos', 'categorias']);
+    };
+  }
 }
