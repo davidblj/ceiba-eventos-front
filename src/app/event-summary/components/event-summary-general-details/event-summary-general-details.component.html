@@ -2,12 +2,19 @@
 <div class="general-details">
 
   <div class="general-details--display-flex">
+    
     <div class="general-details__name mat-headline">
       {{eventSummary?.name}}
     </div>
+    
     <div class="general-details__inception-date mat-caption">
       {{day}} del mes {{month}}
     </div>
+
+    <button mat-stroked-button
+      (click)="onClickHandler()">
+      <span class="mat-body">archivar</span>
+    </button>
   </div>  
 
 </div>

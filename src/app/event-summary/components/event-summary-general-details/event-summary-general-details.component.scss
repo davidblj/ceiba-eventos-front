@@ -2,7 +2,10 @@
 
 .general-details {
 
+    position: relative;
+
     &--display-flex {
+
         height: 200px;
         display: flex;
         flex-direction: column;
@@ -11,4 +14,9 @@
         background: $gray-2;
         color: $black-1;        
     }    
+
+    &__inception-date {
+
+        margin-bottom: 15px;
+    }
 }

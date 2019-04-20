@@ -15,6 +15,8 @@ import { EventSummaryAttendantOrganizerDetailsComponent } from './components/eve
 import { EventSummaryAttendantDetailsComponent } from './components/event-summary-attendant-details/event-summary-attendant-details.component';
 import { EventSummaryAttendantSectionComponent } from './components/event-summary-attendant-section/event-summary-attendant-section.component';
 import { SummaryContainerComponent } from './containers/summary-container/summary-container.component';
+import { InquiryDialogComponent } from '../shared/components/inquiry-dialog/inquiry-dialog.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,9 @@ import { SummaryContainerComponent } from './containers/summary-container/summar
   ],
   imports: [
     CommonModule,
-    EventSummaryRoutingModule,
-    MaterialModule
-  ]
+    EventSummaryRoutingModule,    
+    MaterialModule,
+    SharedModule
+  ],
 })
 export class EventSummaryModule { }

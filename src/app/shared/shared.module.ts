@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormFooterComponent } from './components/form-footer/form-footer.component';
 import { MaterialModule } from '../material/material.module';
 import { FeedbackDialogComponent } from './components/feedback-dialog/feedback-dialog.component';
+import { InquiryDialogComponent } from './components/inquiry-dialog/inquiry-dialog.component';
 
 @NgModule({
   declarations: [
     FormFooterComponent,
-    FeedbackDialogComponent
+    FeedbackDialogComponent,
+    InquiryDialogComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { FeedbackDialogComponent } from './components/feedback-dialog/feedback-d
     FeedbackDialogComponent
   ],
   entryComponents: [
-    FeedbackDialogComponent
+    FeedbackDialogComponent,
+    InquiryDialogComponent
   ]
 })
 export class SharedModule { }

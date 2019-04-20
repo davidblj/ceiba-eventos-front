@@ -1,0 +1,22 @@
+
+<div class="inquiry-dialog-component mat-body">
+  
+  <img src="assets/icons/alarm.svg" class="inquiry-dialog-component__warning-icon" alt="">
+
+  <div class="inquiry-dialog-component__message">
+    <span>{{data.inquiry}}</span>
+  </div>
+  
+  <div class="inquiry-dialog-component__button-section">    
+    <button mat-stroked-button 
+            (click)="leftButtonClickHandler()">
+      {{data.leftButtonMessage}}
+    </button>
+    <button mat-stroked-button
+            color="accent" 
+            (click)="rightButtonClickHandler()">
+      {{data.rightButtonMessage}}
+    </button>    
+  </div>
+
+</div>

@@ -4,7 +4,7 @@ export enum Status {
     fail
 }
 
-export interface ModalData {
+export interface FeedbackModalData {
 
     status: Status;
     message: String;

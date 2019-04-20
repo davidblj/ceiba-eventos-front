@@ -1,13 +1,11 @@
 @import '~@angular/material/theming';   
+@import '~src/scss/abstracts/mixins.scss';
 
 .feedback-dialog-content {    
 
     &--display-flex {
         
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexbox-centered-layout;        
     }
 
     &__message {           

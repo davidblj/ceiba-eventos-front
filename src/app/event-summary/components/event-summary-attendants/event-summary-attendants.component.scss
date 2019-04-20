@@ -1,0 +1,12 @@
+@import "~src/scss/theme-colors.scss";
+
+.attendants {
+
+    &__information-message {
+
+        color: $black-1;
+        padding-top: 10px;
+        padding-left: 8px;        
+    }
+}
+    

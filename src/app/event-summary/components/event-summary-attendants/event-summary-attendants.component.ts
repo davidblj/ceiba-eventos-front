@@ -15,5 +15,8 @@ export class EventSummaryAttendantsComponent implements OnInit {
 
   ngOnInit() {
   }
-}
 
+  get noParticipantsRegistered() {
+    return this.attendants.length === 0;
+  }
+}

@@ -15,7 +15,10 @@ import { ListContainerComponent } from './containers/list-container/list-contain
     EventCategoriesComponent, 
     EventCategoriesNavigationComponent, 
     EventCategoriesListComponent, 
-    EventCategoriesItemComponent, EventCategoriesTabComponent, EventCategoriesTabsComponent, ListContainerComponent
+    EventCategoriesItemComponent, 
+    EventCategoriesTabComponent, 
+    EventCategoriesTabsComponent, 
+    ListContainerComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ModalData, Status } from '../../interfaces/modal-data.interface';
+import { FeedbackModalData, Status } from '../../interfaces/feedback-modal-data.interface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,12 +10,11 @@ import { Router } from '@angular/router';
 })
 export class FeedbackDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: ModalData, 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: FeedbackModalData, 
               private router: Router, 
               private dialogReference: MatDialogRef<FeedbackDialogComponent>) { }
 
   ngOnInit() {
-    console.log(this.data);
   }
 
   get responseSucceed() {

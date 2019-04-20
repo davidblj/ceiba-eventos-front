@@ -6,9 +6,11 @@
     background: $gray-2;        
     width: 250px;
     padding: 25px 15px;
-    margin-right: 20px;
+    margin: 7px 20px 7px 7px;
     border-radius: 7px;
-    box-shadow: 4px 4px 15px $gray-1;
+    box-shadow: 4px 4px 8px $gray-1;
+    background: $primary-light-3;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,15 +18,13 @@
     &__shared-amount {
 
         font-size: 15px;
-        color: $black-1;
     }
 
     &__of {
         font-size: 15px;
-        color: $black-1;  
     }
 
     &__available-stock {
-        font-size: 23px;
+        font-size: 18px;
     }
 }

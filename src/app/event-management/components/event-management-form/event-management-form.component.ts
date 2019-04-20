@@ -7,7 +7,7 @@ import { ResourcePickerContainerComponent } from '../../containers/resource-pick
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { EventManagementSnackbarComponent } from '../event-management-snackbar/event-management-snackbar.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalData, Status } from 'src/app/shared/interfaces/modal-data.interface';
+import { FeedbackModalData, Status } from 'src/app/shared/interfaces/feedback-modal-data.interface';
 import { FeedbackDialogComponent } from 'src/app/shared/components/feedback-dialog/feedback-dialog.component';
 
 @Component({
@@ -61,7 +61,7 @@ export class EventManagementFormComponent implements OnInit {
     });
   }  
 
-  buildFailedModalData(): ModalData {
+  buildFailedModalData(): FeedbackModalData {
 
     return {
       status: Status.fail,

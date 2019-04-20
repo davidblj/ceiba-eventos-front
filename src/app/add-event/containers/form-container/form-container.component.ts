@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EventService } from 'src/app/core/services/event.service';
 import { Event } from 'src/app/shared/interfaces/event.interface';
-import { ModalData, Status } from 'src/app/shared/interfaces/modal-data.interface';
+import { FeedbackModalData, Status } from 'src/app/shared/interfaces/feedback-modal-data.interface';
 import { FeedbackDialogComponent } from 'src/app/shared/components/feedback-dialog/feedback-dialog.component';
 
 @Component({
@@ -48,7 +48,7 @@ export class FormContainerComponent implements OnInit {
 
   handleSuccessfullResponse() {
 
-    return (response) => {
+    return () => {
 
       this.loading = false;
       this.openDialog(this.buildSuccessModalData());
@@ -57,14 +57,14 @@ export class FormContainerComponent implements OnInit {
 
   handleFailedResponse() {
 
-    return (error) => {
+    return () => {
 
       this.loading = false;
       this.openDialog(this.buildFailedModalData());
     };
   }
 
-  openDialog(data: ModalData) {
+  openDialog(data: FeedbackModalData) {
 
     return this.dialogService.open(FeedbackDialogComponent, {
       width: '80vw',
@@ -73,7 +73,7 @@ export class FormContainerComponent implements OnInit {
     });
   }
 
-  buildFailedModalData(): ModalData {
+  buildFailedModalData(): FeedbackModalData {
 
     return {
       status: Status.fail,
@@ -83,7 +83,7 @@ export class FormContainerComponent implements OnInit {
   }
 
   // TODO: include the event id for the feedback dialog component to make redirection
-  buildSuccessModalData(): ModalData {
+  buildSuccessModalData(): FeedbackModalData {
     
     return {
       status: Status.success,
